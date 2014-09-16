@@ -95,11 +95,15 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return YES;
+    return NO;
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeRight;
 }
 
 - (void)registerOnPay:(void (^)(void))payBlock onCancel:(void (^)(void))cancelBlock {

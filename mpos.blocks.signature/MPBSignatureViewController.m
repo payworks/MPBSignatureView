@@ -68,17 +68,17 @@
         
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
         // iOS 7+
-        self.bounds = CGRectMake(0, 20, self.bounds.size.width, self.bounds.size.height);
-        self.signatureFrame = CGRectMake(0, 64, self.bounds.size.height, self.bounds.size.width-108);
+        self.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+        self.signatureFrame = CGRectMake(0, self.bounds.origin.y + 46, self.bounds.size.height, self.bounds.size.width-108);
 #else
         // pre iOS 7
         self.bounds = CGRectMake(0, 0, self.bounds.size.width-20, self.bounds.size.height);
         self.signatureFrame = CGRectMake(0, 44, self.bounds.size.height, self.bounds.size.width-88);
 #endif
         
-        self.largeFont = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:32];
-        self.mediumFont = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:20];
-        self.smallFont = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:16];
+        self.largeFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:32];
+        self.mediumFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
+        self.smallFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
         
         [self setupSignatureFieldWithFrame:self.signatureFrame];
     }
@@ -92,6 +92,37 @@
     self.signatureColor = [UIColor blueColor];
     self.payButtonText = @"Pay";
     self.cancelButtonText = @"Cancel";
+}
+
+- (void) signatureAvailable:(BOOL)signatureAvailable {
+    if (signatureAvailable) {
+        [self hasSignature];
+    } else {
+        [self noSignatureAnimated:YES];
+    }
+}
+
+- (void) noSignatureAnimated:(BOOL)animated {
+    self.payButton.enabled = NO;
+    if (!animated) {
+        self.clearButton.alpha = 0;
+        self.payButton.backgroundColor = [UIColor grayColor];
+    } else {
+        [UIView animateWithDuration:0.1 animations:^{
+            self.clearButton.alpha = 0;
+            self.payButton.backgroundColor = [UIColor grayColor];
+        }];
+    }
+}
+
+
+- (void) hasSignature {
+    self.payButton.enabled = YES;
+    [UIView animateWithDuration:0.5 delay:0.2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.clearButton.alpha = 1;
+        self.payButton.backgroundColor = [self buttonColor];
+    } completion:NULL];
+
 }
 
 - (BOOL)shouldAutorotate {
@@ -119,13 +150,14 @@
     [self setupPayButton];
     [self setupCancelButton];
     [self setupClearButton];
+    [self noSignatureAnimated:NO];
 }
 
 - (void)setupBackgroundElements {
     self.signatureLineView = [[UIView alloc] initWithFrame:CGRectMake(0.382*self.bounds.size.height, self.bounds.size.width-44, 0.5f, 46)];
     self.signatureLineView.backgroundColor = self.colorLine;
     
-    self.topBackground = [[UIView alloc]initWithFrame:CGRectMake(-2, -2, self.bounds.size.height+4,self.bounds.origin.y+46)];
+    self.topBackground = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.height+4,self.bounds.origin.y+46)];
     self.bottomBackground = [[UIView alloc]initWithFrame:CGRectMake(-2, self.bounds.size.width-44, self.bounds.size.height+4,46)];
     
     self.topBackground.backgroundColor = self.colorBackground;
@@ -198,7 +230,7 @@
 }
 - (void)setupClearButton {
     self.clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.clearButton.frame = CGRectMake(self.signatureFrame.size.width-44, self.signatureFrame.origin.y, 44, 44);
+    self.clearButton.frame = CGRectMake(self.signatureFrame.size.width-80, self.signatureFrame.origin.y, 80, 80);
     [self.clearButton setTitle:@"X" forState:UIControlStateNormal];
     [[self.clearButton titleLabel] setFont:self.mediumFont];
     [self.clearButton addTarget:self
@@ -206,6 +238,11 @@
              forControlEvents:UIControlEventTouchUpInside];
     [self.clearButton setTitleColor:self.colorLine forState:UIControlStateNormal];
     [self.clearButton setBackgroundColor:[UIColor clearColor]];
+    [self.clearButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    [self.clearButton setContentVerticalAlignment:UIControlContentVerticalAlignmentTop];
+    
+    //move text 10 pixels down and right
+    [self.clearButton setTitleEdgeInsets:UIEdgeInsetsMake(8.0f, 0.0f, 0.0f, 10.0f)];
     
     [self.view addSubview:self.clearButton];
 }

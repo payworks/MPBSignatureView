@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB011317D4C84A25A715D98B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E57B43C87F4EABBBABE515 /* libPods.a */; };
-		CF076A111858C7AB001E072C /* temp_dot.png in Resources */ = {isa = PBXBuildFile; fileRef = CF076A101858C7AB001E072C /* temp_dot.png */; };
-		CF136A9A1823E293000DC47E /* CCNode+SFGestureRecognizers.m in Sources */ = {isa = PBXBuildFile; fileRef = CF136A991823E293000DC47E /* CCNode+SFGestureRecognizers.m */; };
-		CF136A9F1823E4E0000DC47E /* LineDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = CF136A9E1823E4E0000DC47E /* LineDrawer.m */; };
-		CF136AAE1823F609000DC47E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF136AAA1823F5D3000DC47E /* OpenAL.framework */; };
-		CF136AAF1823F609000DC47E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF136AAB1823F5D3000DC47E /* OpenGLES.framework */; };
+		2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */; };
 		CF159BDE1823B7C700A797FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF159BDD1823B7C700A797FE /* Foundation.framework */; };
 		CF159BE01823B7C700A797FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF159BDF1823B7C700A797FE /* CoreGraphics.framework */; };
 		CF159BE21823B7C700A797FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF159BE11823B7C700A797FE /* UIKit.framework */; };
@@ -30,7 +25,6 @@
 		CF4B565018426BCE002687E0 /* MPBTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4B564F18426BCE002687E0 /* MPBTestViewController.m */; };
 		CFAB7D2F185375C30013D538 /* MPBSignatureFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAB7D2C185375C30013D538 /* MPBSignatureFieldViewController.m */; };
 		CFAB7D30185375C30013D538 /* MPBSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAB7D2E185375C30013D538 /* MPBSignatureViewController.m */; };
-		CFD7FBC11823BF2C0087E696 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFD7FBC01823BF2C0087E696 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09E57B43C87F4EABBBABE515 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3BCC908690742ECBC945A40 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		CF076A101858C7AB001E072C /* temp_dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temp_dot.png; sourceTree = "<group>"; };
-		CF136A981823E293000DC47E /* CCNode+SFGestureRecognizers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+SFGestureRecognizers.h"; sourceTree = "<group>"; };
-		CF136A991823E293000DC47E /* CCNode+SFGestureRecognizers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+SFGestureRecognizers.m"; sourceTree = "<group>"; };
-		CF136A9D1823E4E0000DC47E /* LineDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDrawer.h; sourceTree = "<group>"; };
-		CF136A9E1823E4E0000DC47E /* LineDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDrawer.m; sourceTree = "<group>"; };
-		CF136AAA1823F5D3000DC47E /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/OpenAL.framework; sourceTree = DEVELOPER_DIR; };
-		CF136AAB1823F5D3000DC47E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		2DFF3EF61A6D2DB100C7B3A5 /* PPSSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PPSSignatureView.h; path = External/PPSSignatureView/PPSSignatureView.h; sourceTree = "<group>"; };
+		2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPSSignatureView.m; path = External/PPSSignatureView/PPSSignatureView.m; sourceTree = "<group>"; };
+		55AEE256D8722D5BB29A88AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		664CD16262ED00CC243D2947 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF159BDA1823B7C700A797FE /* mpos.ios.blocks.signatureview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpos.ios.blocks.signatureview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF159BDD1823B7C700A797FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF159BDF1823B7C700A797FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -78,7 +67,6 @@
 		CFAB7D2C185375C30013D538 /* MPBSignatureFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureFieldViewController.m; sourceTree = "<group>"; };
 		CFAB7D2D185375C30013D538 /* MPBSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewController.h; sourceTree = "<group>"; };
 		CFAB7D2E185375C30013D538 /* MPBSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewController.m; sourceTree = "<group>"; };
-		CFD7FBC01823BF2C0087E696 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF136AAE1823F609000DC47E /* OpenAL.framework in Frameworks */,
-				CF136AAF1823F609000DC47E /* OpenGLES.framework in Frameworks */,
-				CFD7FBC11823BF2C0087E696 /* QuartzCore.framework in Frameworks */,
 				CF159BE01823B7C700A797FE /* CoreGraphics.framework in Frameworks */,
 				CF159BE21823B7C700A797FE /* UIKit.framework in Frameworks */,
 				CF159BDE1823B7C700A797FE /* Foundation.framework in Frameworks */,
-				AB011317D4C84A25A715D98B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,52 +93,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF076A0F1858C7AB001E072C /* Resources */ = {
+		2DFF3EF21A6D2C8B00C7B3A5 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				CF076A101858C7AB001E072C /* temp_dot.png */,
+				2DFF3EF61A6D2DB100C7B3A5 /* PPSSignatureView.h */,
+				2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */,
 			);
-			path = Resources;
+			name = External;
 			sourceTree = "<group>";
 		};
-		CF136A961823E293000DC47E /* External */ = {
+		9C15569829FBADE02C48582B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF136A9C1823E4E0000DC47E /* LineDrawer */,
-				CF136A971823E293000DC47E /* CCNode+SFGestureRecognizers */,
+				664CD16262ED00CC243D2947 /* Pods.debug.xcconfig */,
+				55AEE256D8722D5BB29A88AE /* Pods.release.xcconfig */,
 			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		CF136A971823E293000DC47E /* CCNode+SFGestureRecognizers */ = {
-			isa = PBXGroup;
-			children = (
-				CF136A981823E293000DC47E /* CCNode+SFGestureRecognizers.h */,
-				CF136A991823E293000DC47E /* CCNode+SFGestureRecognizers.m */,
-			);
-			path = "CCNode+SFGestureRecognizers";
-			sourceTree = "<group>";
-		};
-		CF136A9C1823E4E0000DC47E /* LineDrawer */ = {
-			isa = PBXGroup;
-			children = (
-				CF136A9D1823E4E0000DC47E /* LineDrawer.h */,
-				CF136A9E1823E4E0000DC47E /* LineDrawer.m */,
-			);
-			path = LineDrawer;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		CF159BD11823B7C700A797FE = {
 			isa = PBXGroup;
 			children = (
-				CF076A0F1858C7AB001E072C /* Resources */,
-				CF136A961823E293000DC47E /* External */,
+				2DFF3EF21A6D2C8B00C7B3A5 /* External */,
 				CFAB7D2A185375C30013D538 /* mpos.blocks.signature */,
 				CF159BE31823B7C700A797FE /* mpos.ios.blocks.signatureview */,
 				CF159C021823B7C700A797FE /* mpos.ios.blocks.signatureviewTests */,
 				CF159BDC1823B7C700A797FE /* Frameworks */,
 				CF159BDB1823B7C700A797FE /* Products */,
-				C3BCC908690742ECBC945A40 /* Pods.xcconfig */,
+				9C15569829FBADE02C48582B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,14 +136,10 @@
 		CF159BDC1823B7C700A797FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF136AAA1823F5D3000DC47E /* OpenAL.framework */,
-				CF136AAB1823F5D3000DC47E /* OpenGLES.framework */,
-				CFD7FBC01823BF2C0087E696 /* QuartzCore.framework */,
 				CF159BDD1823B7C700A797FE /* Foundation.framework */,
 				CF159BDF1823B7C700A797FE /* CoreGraphics.framework */,
 				CF159BE11823B7C700A797FE /* UIKit.framework */,
 				CF159BFC1823B7C700A797FE /* XCTest.framework */,
-				09E57B43C87F4EABBBABE515 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,11 +207,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF159C0C1823B7C700A797FE /* Build configuration list for PBXNativeTarget "mpos.ios.blocks.signatureview" */;
 			buildPhases = (
-				47AD46AD935C4D7C84250971 /* Check Pods Manifest.lock */,
 				CF159BD61823B7C700A797FE /* Sources */,
 				CF159BD71823B7C700A797FE /* Frameworks */,
 				CF159BD81823B7C700A797FE /* Resources */,
-				6C73964668FE48C5894E743F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,7 +280,6 @@
 				CF159BF61823B7C700A797FE /* Images.xcassets in Resources */,
 				CF159BE81823B7C700A797FE /* InfoPlist.strings in Resources */,
 				CF159BF11823B7C700A797FE /* Main.storyboard in Resources */,
-				CF076A111858C7AB001E072C /* temp_dot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,49 +293,15 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		47AD46AD935C4D7C84250971 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6C73964668FE48C5894E743F /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		CF159BD61823B7C700A797FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF136A9F1823E4E0000DC47E /* LineDrawer.m in Sources */,
 				CF159BEE1823B7C700A797FE /* MPBAppDelegate.m in Sources */,
 				CF4B565018426BCE002687E0 /* MPBTestViewController.m in Sources */,
 				CF159BEA1823B7C700A797FE /* main.m in Sources */,
-				CF136A9A1823E293000DC47E /* CCNode+SFGestureRecognizers.m in Sources */,
+				2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */,
 				CF159BF41823B7C700A797FE /* MPBViewController.m in Sources */,
 				CFAB7D2F185375C30013D538 /* MPBSignatureFieldViewController.m in Sources */,
 				CFAB7D30185375C30013D538 /* MPBSignatureViewController.m in Sources */,
@@ -503,10 +428,11 @@
 		};
 		CF159C0D1823B7C700A797FE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3BCC908690742ECBC945A40 /* Pods.xcconfig */;
+			baseConfigurationReference = 664CD16262ED00CC243D2947 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_MODULES_AUTOLINK = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mpos.ios.blocks.signatureview/mpos.ios.blocks.signatureview-Prefix.pch";
 				INFOPLIST_FILE = "mpos.ios.blocks.signatureview/mpos.ios.blocks.signatureview-Info.plist";
@@ -520,10 +446,11 @@
 		};
 		CF159C0E1823B7C700A797FE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3BCC908690742ECBC945A40 /* Pods.xcconfig */;
+			baseConfigurationReference = 55AEE256D8722D5BB29A88AE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_MODULES_AUTOLINK = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "mpos.ios.blocks.signatureview/mpos.ios.blocks.signatureview-Prefix.pch";
 				INFOPLIST_FILE = "mpos.ios.blocks.signatureview/mpos.ios.blocks.signatureview-Info.plist";

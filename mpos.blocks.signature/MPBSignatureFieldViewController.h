@@ -24,18 +24,16 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "cocos2d/cocos2d.h"
-#import "LineDrawer.h"
-@interface MPBSignatureFieldViewController : UIViewController <CCDirectorDelegate,LineDrawerDelegate>
+#import "PPSSignatureView.h"
 
-@property (nonatomic, weak) CCGLView* signatureView;
+@interface MPBSignatureFieldViewController : UIViewController
+@property (nonatomic, strong) PPSSignatureView* signatureView;
 
 @property (nonatomic, copy) void (^onSignatureClear)();
 @property (nonatomic, copy) void (^onSignatureChange)();
 
 - (void)setupSignatureFieldWithFrame:(CGRect)frame;
 - (void)setupSignatureFieldWithView:(UIView*)view;
-- (void)tearDownSignatureField;
 
 - (void)setupSignatureFieldBackground;
 - (void)setupSignatureFieldComponents;
@@ -43,12 +41,8 @@
 - (void)clearSignature;
 - (UIImage*)signature;
 
-@end
-
-@protocol PWTSignatureFieldViewControllerDelegate <NSObject>
-
-- (void)signatureDidClear:(MPBSignatureFieldViewController*)aController;
-- (void)signatureDidChange:(MPBSignatureFieldViewController*)aController;
+- (void)signatureAvailable:(BOOL)signatureAvailable;
 
 @end
+
 

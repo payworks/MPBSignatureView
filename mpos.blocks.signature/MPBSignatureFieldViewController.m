@@ -24,13 +24,8 @@
  */
 
 #import "MPBSignatureFieldViewController.h"
-#import "cocos2d/cocos2d.h"
-#import "LineDrawer.h"
 
-@interface MPBSignatureFieldViewController ()
-
-@property (nonatomic, weak) CCDirectorIOS *director;
-@property (nonatomic, weak) LineDrawer *lineDrawer;
+@interface MPBSignatureFieldViewController () <PPSSignatureViewDelegate>
 
 @property (nonatomic, weak) UIView *viewToAdd;
 
@@ -75,98 +70,33 @@
 }
 
 - (void)setupSignatureField {
-    self.signatureView = [CCGLView viewWithFrame:self.frame
-                                     pixelFormat:kEAGLColorFormatRGB565
-                                     depthFormat:0
-                              preserveBackbuffer:NO
-                                      sharegroup:nil
-                                   multiSampling:NO
-                                 numberOfSamples:0];
-    
-    self.director = (CCDirectorIOS*) [CCDirector sharedDirector];
-    
-	self.director.wantsFullScreenLayout = YES;
-    [self.director setDisplayStats:NO];
-    [self.director setAnimationInterval:1.0/60];
-	[self.director setProjection:kCCDirectorProjection2D];
-    
-    [self.director setView:self.signatureView];
-    [self addChildViewController:self.director];
-    
-    CCScene *scene = [CCScene node];
-    self.lineDrawer = [LineDrawer node];
-    self.lineDrawer.color = self.signatureColor;
-    self.lineDrawer.delegate = self;
-    [scene addChild:self.lineDrawer];
-	[self.director pushScene: scene];
+    self.signatureView = [[PPSSignatureView alloc] initWithFrame:self.frame context:nil];
+    self.signatureView.delegate = self;
     
     [self.view addSubview:self.signatureView];
 }
 
--(void)willMoveToParentViewController:(UIViewController *)parent {
-    if (!parent) {
-        [self tearDownSignatureField];
-    }
-}
-
--(void)tearDownSignatureField {
-    [self.director willMoveToParentViewController:nil];
-    [self.director.view removeFromSuperview];
-    [self.director removeFromParentViewController];
-    self.director.delegate = nil;
-    [self.director setView:nil];
-    CC_DIRECTOR_END();
-    self.director = nil;
-    self.lineDrawer = nil;
-}
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (![self.director isAnimating]) {
-        
-        [self setupSignatureFieldBackground];
-        [self setupSignatureField];
-        [self setupSignatureFieldComponents];
-        
-        [self.director startAnimation];
-    }
+    [self setupSignatureFieldBackground];
+    [self setupSignatureField];
+    [self setupSignatureFieldComponents];
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    [self.director stopAnimation];
-    [self tearDownSignatureField];
-    [super viewWillDisappear:animated];
-}
 
-#pragma mark -- Application lifecycle methods
--(void)applicationWillEnterForeground {
-    [self.director startAnimation];
-}
-
--(void)applicationWillResignActive {
-    [self.director stopAnimation];
-}
 
 -(void)clearSignature {
-    [self.lineDrawer clearDrawing];
+    [self.signatureView erase];
 }
 
 -(UIImage *)signature {
-    return [self.lineDrawer drawing];
+    return [self.signatureView signatureImage];
 }
 
-- (void)lineDrawerDidChange:(LineDrawer *)aDrawer;
-{
-    if(self.onSignatureChange) {
-        self.onSignatureChange();
-    }
+- (void)signatureAvailable:(BOOL)signatureAvailable {
+    // method can be overwritte by user to enable/disable frontend components
 }
 
-- (void)lineDrawerDidClear:(LineDrawer *)aDrawer;
-{
-    if(self.onSignatureClear) {
-        self.onSignatureClear();
-    }
-}
 
 @end

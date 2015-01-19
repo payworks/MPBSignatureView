@@ -77,6 +77,31 @@
     
 }
 
+- (void)setMerchantName:(NSString *)merchantName {
+    _merchantName = merchantName;
+    self.merchantNameLabel.text = merchantName;
+}
+
+- (void)setAmountText:(NSString *)amountText {
+    _amountText = amountText;
+    self.amountTextLabel.text = amountText;
+}
+
+- (void)setSignatureText:(NSString *)signatureText {
+    _signatureText = signatureText;
+    self.signatureTextLabel.text = signatureText;
+}
+
+- (void)setPayButtonText:(NSString *)payButtonText {
+    _payButtonText = payButtonText;
+    [self.payButton setTitle:payButtonText forState:UIControlStateNormal];
+}
+
+- (void)setCancelButtonText:(NSString *)cancelButtonText {
+    _cancelButtonText = cancelButtonText;
+    [self.cancelButton setTitle:cancelButtonText forState:UIControlStateNormal];
+}
+
 - (void) signatureAvailable:(BOOL)signatureAvailable {
     if (signatureAvailable) {
         [self hasSignature];
@@ -139,23 +164,15 @@
     
     int backgroundsHeight = 46;
     
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-    // iOS 7+
-    self.signatureFrame = CGRectMake(0, self.view.frame.origin.y + 46, self.bounds.size.height, self.bounds.size.width-46);
-#else
-    // pre iOS 7
-    self.signatureFrame = CGRectMake(0, 44, self.bounds.size.height, self.bounds.size.width-46);
-#endif
-
-    self.signatureLineView.frame =CGRectMake(22,self.bounds.size.width-44-10-self.smallFont.lineHeight - 10, self.bounds.size.height-44, 0.5f);
-    
     self.topBackground.frame=CGRectMake(0, 0, self.bounds.size.width,backgroundsHeight);
     self.bottomBackground.frame =CGRectMake(0, self.bounds.size.height-backgroundsHeight, self.bounds.size.width,backgroundsHeight);
     
     self.merchantNameLabel.frame = CGRectMake(10, 0, self.bounds.size.width / 2, backgroundsHeight);
-    self.amountTextLabel.frame = CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width / 2 - 10, backgroundsHeight);
+    self.amountTextLabel.frame = CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width / 2 - 12, backgroundsHeight);
     
     self.signatureTextLabel.frame = CGRectMake(0, self.bounds.size.height-backgroundsHeight - 25, self.bounds.size.width, self.signatureTextLabel.frame.size.height);
+    self.signatureLineView.frame =CGRectMake(22,self.signatureTextLabel.frame.origin.y - 5, self.bounds.size.width-44, 0.5f);
+
     self.payButton.frame = CGRectMake(0.382*self.bounds.size.width, self.bounds.size.height-backgroundsHeight, 0.618*self.bounds.size.width, backgroundsHeight);
     self.cancelButton.frame = CGRectMake(0, self.bounds.size.height-backgroundsHeight, 0.382*self.bounds.size.width, backgroundsHeight);
     self.clearButton.frame = CGRectMake(self.bounds.size.width-80, backgroundsHeight, 80, 80);
@@ -164,6 +181,7 @@
 }
 
 - (void)setupBackgroundElements {
+    self.signatureLineView = [[UIView alloc] init];
     self.signatureLineView.backgroundColor = self.colorLine;
     
     self.topBackground = [[UIView alloc]init ];

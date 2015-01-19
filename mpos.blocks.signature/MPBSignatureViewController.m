@@ -66,10 +66,15 @@
         
         self.bounds = [[UIScreen mainScreen]bounds];
         
+        // TODO: understand why this works
+        int width = MIN(self.bounds.size.width, self.bounds.size.height);
+        int height = MAX(self.bounds.size.height, self.bounds.size.width);
+
+        
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
         // iOS 7+
-        self.bounds = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-        self.signatureFrame = CGRectMake(0, self.bounds.origin.y + 46, self.bounds.size.height, self.bounds.size.width-108);
+        self.bounds = CGRectMake(0, 0, width, height);
+        self.signatureFrame = CGRectMake(0, self.bounds.origin.y + 46, self.bounds.size.height, self.bounds.size.width-46);
 #else
         // pre iOS 7
         self.bounds = CGRectMake(0, 0, self.bounds.size.width-20, self.bounds.size.height);
@@ -83,6 +88,10 @@
         [self setupSignatureFieldWithFrame:self.signatureFrame];
     }
     return self;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 - (void) setDefaultText {
@@ -126,16 +135,13 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeRight;
-}
 
 - (void)registerOnPay:(void (^)(void))payBlock onCancel:(void (^)(void))cancelBlock {
     self.payCallback = payBlock;

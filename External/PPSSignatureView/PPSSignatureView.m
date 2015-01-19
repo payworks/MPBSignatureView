@@ -144,12 +144,6 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         tap.cancelsTouchesInView = YES;
         [self addGestureRecognizer:tap];
-        
-        // Erase with long press
-        UILongPressGestureRecognizer *longer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-        longer.cancelsTouchesInView = YES;
-        [self addGestureRecognizer:longer];
-        
     } else [NSException raise:@"NSOpenGLES2ContextException" format:@"Failed to create OpenGL ES2 context"];
 }
 
@@ -203,7 +197,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     length = 0;
     dotsLength = 0;
     self.hasSignature = NO;
-    [self.delegate signatureAvailable:NO];
+    [self.signatureDelegate signatureAvailable:NO];
     
     [self setNeedsDisplay];
 }
@@ -272,11 +266,6 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
     [self setNeedsDisplay];
 }
 
-
-- (void)longPress:(UILongPressGestureRecognizer *)lp {
-    [self erase];
-}
-
 - (void)pan:(UIPanGestureRecognizer *)p {
     
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -311,7 +300,7 @@ static PPSSignaturePoint ViewPointToGL(CGPoint viewPoint, CGRect bounds, GLKVect
         addVertex(&length, previousVertex);
         
         self.hasSignature = YES;
-        [self.delegate signatureAvailable:YES];
+        [self.signatureDelegate signatureAvailable:YES];
         
     } else if ([p state] == UIGestureRecognizerStateChanged) {
         

@@ -73,7 +73,8 @@
 
 - (void)setupSignatureField {
     self.signatureView = [[PPSSignatureView alloc] initWithFrame:self.frame context:nil];
-    self.signatureView.delegate = self;
+    self.signatureView.signatureDelegate = self;
+    self.signatureView.backgroundColor = [UIColor clearColor];
     
     [self.view addSubview:self.signatureView];
 }

@@ -52,6 +52,7 @@
     
     MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc]init];
     signatureViewController.modalPresentationStyle = style;
+    signatureViewController.preferredContentSize = CGSizeMake(800, 500);
         
     signatureViewController.merchantName = @"Fruit Shop";
     signatureViewController.amountText = @"5.99 €";

@@ -34,9 +34,12 @@
     [super viewDidLoad];
 }
 
+- (IBAction)modal:(id)sender {
+    [self showModal:UIModalPresentationFormSheet];
+}
 
 - (IBAction)showPredefinedScreen:(id)sender {
-    [self showModal];
+    [self showModal:UIModalPresentationFullScreen];
 }
 
 - (IBAction)showCustomScreen:(id)sender {
@@ -44,10 +47,11 @@
     [self presentViewController:vc animated:YES completion:nil];
 }
 
-- (void)showModal
+- (void)showModal:(UIModalPresentationStyle) style
 {
     
     MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc]init];
+    signatureViewController.modalPresentationStyle = style;
         
     signatureViewController.merchantName = @"Fruit Shop";
     signatureViewController.amountText = @"5.99 €";

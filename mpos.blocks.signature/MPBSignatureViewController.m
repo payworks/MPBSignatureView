@@ -53,54 +53,28 @@
 
 @implementation MPBSignatureViewController
 
-- (id)init {
-    self = [super init];
-    if (self) {
-        [self setDefaultText];
-        
-        self.buttonColor = [UIColor colorWithRed:21.0f/255.0f green:126.0f/255.0f blue:251.0f/255.0f alpha:1.0f];
-        self.colorLine = [UIColor colorWithRed:142.0f/255.0f green:142.0f/255.0f blue:147.0f/255.0f alpha:1.0];
-        self.colorBackground = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0f];
-        
-        self.view.backgroundColor = [UIColor whiteColor];
-        
-        self.bounds = [[UIScreen mainScreen]bounds];
-        
-        // TODO: understand why this works
-        int width = MIN(self.bounds.size.width, self.bounds.size.height);
-        int height = MAX(self.bounds.size.height, self.bounds.size.width);
-
-        
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-        // iOS 7+
-        self.bounds = CGRectMake(0, 0, width, height);
-        self.signatureFrame = CGRectMake(0, self.bounds.origin.y + 46, self.bounds.size.height, self.bounds.size.width-46);
-#else
-        // pre iOS 7
-        self.bounds = CGRectMake(0, 0, self.bounds.size.width-20, self.bounds.size.height);
-        self.signatureFrame = CGRectMake(0, 44, self.bounds.size.height, self.bounds.size.width-88);
-#endif
-        
-        self.largeFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:32];
-        self.mediumFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
-        self.smallFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-        
-        [self setupSignatureFieldWithFrame:self.signatureFrame];
-    }
-    return self;
-}
-
 - (BOOL)prefersStatusBarHidden {
     return YES;
 }
 
-- (void) setDefaultText {
+- (void) setDefaults {
     self.merchantName = @"Merchant";
     self.amountText = @"1.00 €";
     self.signatureText = @"Signature";
     self.signatureColor = [UIColor blueColor];
     self.payButtonText = @"Pay";
     self.cancelButtonText = @"Cancel";
+    
+    self.buttonColor = [UIColor colorWithRed:21.0f/255.0f green:126.0f/255.0f blue:251.0f/255.0f alpha:1.0f];
+    self.colorLine = [UIColor colorWithRed:142.0f/255.0f green:142.0f/255.0f blue:147.0f/255.0f alpha:1.0];
+    self.colorBackground = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0f];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.largeFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:32];
+    self.mediumFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:20];
+    self.smallFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+    
 }
 
 - (void) signatureAvailable:(BOOL)signatureAvailable {
@@ -149,6 +123,7 @@
 }
 
 - (void)setupSignatureFieldComponents {
+    [self setDefaults];
     [self setupBackgroundElements];
     [self setupMerchantNameLabel];
     [self setupAmountLabel];
@@ -159,12 +134,40 @@
     [self noSignatureAnimated:NO];
 }
 
+- (void)viewWillLayoutSubviews {
+    self.bounds = self.view.bounds;
+    
+    int backgroundsHeight = 46;
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+    // iOS 7+
+    self.signatureFrame = CGRectMake(0, self.view.frame.origin.y + 46, self.bounds.size.height, self.bounds.size.width-46);
+#else
+    // pre iOS 7
+    self.signatureFrame = CGRectMake(0, 44, self.bounds.size.height, self.bounds.size.width-46);
+#endif
+
+    self.signatureLineView.frame =CGRectMake(22,self.bounds.size.width-44-10-self.smallFont.lineHeight - 10, self.bounds.size.height-44, 0.5f);
+    
+    self.topBackground.frame=CGRectMake(0, 0, self.bounds.size.width,backgroundsHeight);
+    self.bottomBackground.frame =CGRectMake(0, self.bounds.size.height-backgroundsHeight, self.bounds.size.width,backgroundsHeight);
+    
+    self.merchantNameLabel.frame = CGRectMake(10, 0, self.bounds.size.width / 2, backgroundsHeight);
+    self.amountTextLabel.frame = CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width / 2 - 10, backgroundsHeight);
+    
+    self.signatureTextLabel.frame = CGRectMake(0, self.bounds.size.height-backgroundsHeight - 25, self.bounds.size.width, self.signatureTextLabel.frame.size.height);
+    self.payButton.frame = CGRectMake(0.382*self.bounds.size.width, self.bounds.size.height-backgroundsHeight, 0.618*self.bounds.size.width, backgroundsHeight);
+    self.cancelButton.frame = CGRectMake(0, self.bounds.size.height-backgroundsHeight, 0.382*self.bounds.size.width, backgroundsHeight);
+    self.clearButton.frame = CGRectMake(self.bounds.size.width-80, backgroundsHeight, 80, 80);
+    
+    self.signatureView.frame = CGRectMake(0, backgroundsHeight, self.bounds.size.width, self.bounds.size.height - backgroundsHeight);
+}
+
 - (void)setupBackgroundElements {
-    self.signatureLineView = [[UIView alloc] initWithFrame:CGRectMake(0.382*self.bounds.size.height, self.bounds.size.width-44, 0.5f, 46)];
     self.signatureLineView.backgroundColor = self.colorLine;
     
-    self.topBackground = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.bounds.size.height+4,self.bounds.origin.y+46)];
-    self.bottomBackground = [[UIView alloc]initWithFrame:CGRectMake(-2, self.bounds.size.width-44, self.bounds.size.height+4,46)];
+    self.topBackground = [[UIView alloc]init ];
+    self.bottomBackground = [[UIView alloc]init];
     
     self.topBackground.backgroundColor = self.colorBackground;
     [self.topBackground.layer setBorderWidth:0.5f];
@@ -179,7 +182,7 @@
     [self.view addSubview:self.signatureLineView];
 }
 - (void)setupMerchantNameLabel {
-    self.merchantNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, self.bounds.origin.y+5, self.bounds.size.height/2-10, 34)];
+    self.merchantNameLabel = [[UILabel alloc]init ];
     self.merchantNameLabel.backgroundColor = [UIColor clearColor];
     [self.merchantNameLabel setText:self.merchantName];
     [self.merchantNameLabel setFont:self.largeFont];
@@ -187,7 +190,7 @@
     [self.view addSubview:self.merchantNameLabel];
 }
 - (void)setupAmountLabel {
-    self.amountTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.bounds.size.height/2, self.bounds.origin.y+5, self.bounds.size.height/2-10, 34)];
+    self.amountTextLabel = [[UILabel alloc]init ];
     self.amountTextLabel.backgroundColor = [UIColor clearColor];
     [self.amountTextLabel setText:self.amountText];
     self.amountTextLabel.textAlignment = NSTextAlignmentRight;
@@ -196,14 +199,13 @@
     [self.view addSubview:self.amountTextLabel];
 }
 - (void)setupSignatureTextLabel {
-    self.signatureTextLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.bounds.size.width-88, self.bounds.size.height, 44)];
+    self.signatureTextLabel = [[UILabel alloc]init ];
     [self.signatureTextLabel setText:self.signatureText];
     [self.signatureTextLabel setFont:self.smallFont];
     self.signatureTextLabel.textColor = self.colorLine;
     self.signatureTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.signatureTextLabel.numberOfLines = 0;
     [self.signatureTextLabel sizeToFit];
-    self.signatureTextLabel.frame = CGRectMake(0, self.bounds.size.width-44-10-self.signatureTextLabel.frame.size.height, self.bounds.size.height, self.signatureTextLabel.frame.size.height);
     self.signatureTextLabel.textAlignment = NSTextAlignmentCenter;
     self.signatureTextLabel.backgroundColor = [UIColor clearColor];
     
@@ -211,7 +213,6 @@
 }
 - (void)setupPayButton {
     self.payButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.payButton.frame = CGRectMake(0.382*self.bounds.size.height, self.bounds.size.width-44, 0.618*self.bounds.size.height, 44);
     [self.payButton setTitle:self.payButtonText forState:UIControlStateNormal];
     [[self.payButton titleLabel] setFont:self.mediumFont];
     [self.payButton addTarget:self
@@ -224,7 +225,6 @@
 }
 - (void)setupCancelButton {
     self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.cancelButton.frame = CGRectMake(0, self.bounds.size.width-44, 0.382*self.bounds.size.height, 44);
     [self.cancelButton setTitle:self.cancelButtonText forState:UIControlStateNormal];
     [[self.cancelButton titleLabel] setFont:self.mediumFont];
     [self.cancelButton addTarget:self
@@ -236,7 +236,6 @@
 }
 - (void)setupClearButton {
     self.clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.clearButton.frame = CGRectMake(self.signatureFrame.size.width-80, self.signatureFrame.origin.y, 80, 80);
     [self.clearButton setTitle:@"X" forState:UIControlStateNormal];
     [[self.clearButton titleLabel] setFont:self.mediumFont];
     [self.clearButton addTarget:self

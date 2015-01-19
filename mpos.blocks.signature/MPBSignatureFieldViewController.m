@@ -29,7 +29,6 @@
 
 @property (nonatomic, weak) UIView *viewToAdd;
 
-@property (nonatomic, weak) UIColor* signatureColor;
 @property CGRect frame;
 
 @end
@@ -39,7 +38,6 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.signatureColor = [UIColor blackColor];
         self.frame = self.view.frame;
     }
     return self;
@@ -47,6 +45,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupSignatureFieldBackground];
+    [self setupSignatureField];
+    [self setupSignatureFieldComponents];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -79,9 +81,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self setupSignatureFieldBackground];
-    [self setupSignatureField];
-    [self setupSignatureFieldComponents];
 }
 
 

@@ -1,23 +1,10 @@
 ![signature view](https://bitbucket.org/payworks/mpos.ios.blocks.signatureview/raw/b9bb9a553242d9a5150f4b20cda018abaf04644d/screen.png "Signature View")
 
-The payment blocks are made available on our CocoaPod podspec repository. To use the payment blocks, add 
-http://pods.mpymnt.com/mpymnt/io.mpymnt.repo.pods.git
-as a custom pod repository. If you want to add it using the name 'mpymnt', you could just execute
+## Install
 
     pod repo add mpymnt http://pods.mpymnt.com/io.mpymnt.repo.pods.git
 
-## SignatureView
-
-The SignatureView enables you to capture a customer's signature drawn on the touch screen of an iOS device and receive it as an UIImage. The SignatureView can either be integrated as an UIView in your existing controller or presented modally using the predefined signature controller.
-
-### Prepare your project
-
-To use the SignatureView in your project, you should have an Xcode project with CocoaPods (http://cocoapods.org) available. Make sure you have added the mpos payment blocks specs repository. Then, create your podfile for the dependencies 
-
-    platform :ios, '6.1'
-    pod 'mpos.blocks.signature', '~> 1.2.0'
-
-Running `pod install` might take a while, since the Cocos2d framework, on which the signature view depends has about 450 MB which have to be downloaded. Don't worry, this will not all be compiled into your app.
+    pod 'mpos.blocks.signature'
 
 ### Use the predefined signature screen
 

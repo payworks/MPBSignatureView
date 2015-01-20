@@ -72,11 +72,8 @@
         imageView.layer.borderColor = [UIColor yellowColor].CGColor;
         imageView.layer.borderWidth = 2.0f;
             
-        [signatureViewController dismissViewControllerAnimated:YES completion:nil];
-            
-    } onCancel:^{
         
-        [signatureViewController dismissViewControllerAnimated:YES completion:nil];
+    } onCancel:^{
             
     }];
     

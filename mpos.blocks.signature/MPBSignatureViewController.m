@@ -276,9 +276,11 @@
 
 - (void)btnPay {
     self.payCallback();
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 - (void)btnCancel {
     self.cancelCallback();
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)viewDidLoad {

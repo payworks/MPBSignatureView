@@ -31,7 +31,7 @@
 // Customizable properties
 @property (nonatomic, strong) NSString* merchantName;
 @property (nonatomic, strong) NSString* amountText;
-@property (nonatomic, strong) NSString* signatureText;
+@property (nonatomic, strong) NSString* signatureTextFormat;
 @property (nonatomic, strong) UIColor* signatureColor;
 @property (nonatomic, strong) NSString* payButtonText;
 @property (nonatomic, strong) NSString* cancelButtonText;

@@ -58,12 +58,13 @@
 }
 
 - (void) setDefaults {
-    self.merchantName = @"Merchant";
-    self.amountText = @"1.00 €";
-    self.signatureText = @"Signature";
+    _merchantName = @"Merchant";
+    _amountText = @"0.00 €";
+    
+    self.signatureTextFormat = NSLocalizedString(@"signatureTextFormat", @"");
     self.signatureColor = [UIColor blueColor];
-    self.payButtonText = @"Pay";
-    self.cancelButtonText = @"Cancel";
+    self.payButtonText = NSLocalizedString(@"pay", @"");;
+    self.cancelButtonText = NSLocalizedString(@"cancel", @"");;
     
     self.buttonColor = [UIColor colorWithRed:21.0f/255.0f green:126.0f/255.0f blue:251.0f/255.0f alpha:1.0f];
     self.colorLine = [UIColor colorWithRed:142.0f/255.0f green:142.0f/255.0f blue:147.0f/255.0f alpha:1.0];
@@ -77,19 +78,24 @@
     
 }
 
+- (void) updateSignatureText {
+    self.signatureTextLabel.text = [NSString stringWithFormat:self.signatureTextFormat, self.amountText, self.merchantName];
+}
+
 - (void)setMerchantName:(NSString *)merchantName {
     _merchantName = merchantName;
     self.merchantNameLabel.text = merchantName;
+    [self updateSignatureText];
 }
 
 - (void)setAmountText:(NSString *)amountText {
     _amountText = amountText;
     self.amountTextLabel.text = amountText;
+    [self updateSignatureText];
 }
 
-- (void)setSignatureText:(NSString *)signatureText {
-    _signatureText = signatureText;
-    self.signatureTextLabel.text = signatureText;
+- (void)setSignatureTextFormat:(NSString *)signatureText {
+    _signatureTextFormat = signatureText;
 }
 
 - (void)setPayButtonText:(NSString *)payButtonText {
@@ -167,7 +173,7 @@
     self.topBackground.frame=CGRectMake(0, 0, self.bounds.size.width,backgroundsHeight);
     self.bottomBackground.frame =CGRectMake(0, self.bounds.size.height-backgroundsHeight, self.bounds.size.width,backgroundsHeight);
     
-    self.merchantNameLabel.frame = CGRectMake(10, 0, self.bounds.size.width / 2, backgroundsHeight);
+    self.merchantNameLabel.frame = CGRectMake(10, 0, self.bounds.size.width * 2 / 3, backgroundsHeight);
     self.amountTextLabel.frame = CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width / 2 - 12, backgroundsHeight);
     
     self.signatureTextLabel.frame = CGRectMake(0, self.bounds.size.height-backgroundsHeight - 25, self.bounds.size.width, self.signatureTextLabel.frame.size.height);
@@ -222,8 +228,8 @@
 }
 - (void)setupSignatureTextLabel {
     self.signatureTextLabel = [[UILabel alloc]init ];
-    [self.signatureTextLabel setText:self.signatureText];
     [self.signatureTextLabel setFont:self.smallFont];
+    [self updateSignatureText];
     self.signatureTextLabel.textColor = self.colorLine;
     self.signatureTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.signatureTextLabel.numberOfLines = 0;

@@ -10,6 +10,8 @@
 	<string>mpos.ios.blocks.signatureview</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>83639D589341ADB212D98F40DED652896CF49E4E</key>
+		<string>bitbucket.org:payworks/mpos.ios.blocks.signatureview.l10n.git</string>
 		<key>98013C8486C71F5C042237CD197DB70AFBABEAB6</key>
 		<string>bitbucket.org:payworks/mpos.ios.blocks.signatureview.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>mpos.ios.blocks.signatureview.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>83639D589341ADB212D98F40DED652896CF49E4E</key>
+		<string>../../l10n/</string>
 		<key>98013C8486C71F5C042237CD197DB70AFBABEAB6</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>98013C8486C71F5C042237CD197DB70AFBABEAB6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>83639D589341ADB212D98F40DED652896CF49E4E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>l10n</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

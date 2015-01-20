@@ -27,7 +27,7 @@ MPBSignatureViewController* signatureViewController = [[MPBSignatureViewControll
    // [paymentProcess continueWithCustomerSignature:signature verified:YES];
 } onCancel:^{
    // if you use the payworks mPOS SDK, continue the transaction with
-    // [paymentProcess continueWithCustomerSignature: nil verified: NO];
+   // [paymentProcess continueWithCustomerSignature: nil verified: NO];
 }];
 ```
 

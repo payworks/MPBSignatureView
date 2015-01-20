@@ -22,8 +22,12 @@ Show it and register callbacks
 MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc]init];
 [self presentViewController:signatureViewController animated:YES completion:nil];
 [signatureViewController registerOnPay:^{
-    UIImage* signature = [signatureViewController signature];            
+    UIImage* signature = [signatureViewController signature];  
+   // if you use the payworks mPOS SDK, continue the transaction with
+   // [paymentProcess continueWithCustomerSignature:signature verified:YES];
 } onCancel:^{
+   // if you use the payworks mPOS SDK, continue the transaction with
+    // [paymentProcess continueWithCustomerSignature: nil verified: NO];
 }];
 ```
 

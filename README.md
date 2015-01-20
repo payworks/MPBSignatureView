@@ -1,5 +1,7 @@
 ![signature view](https://bitbucket.org/payworks/mpos.ios.blocks.signatureview/raw/b9bb9a553242d9a5150f4b20cda018abaf04644d/screen.png "Signature View")
 
+Works perfectly with the mPOS SDK by [payworks](http://www.payworksmobile.com)  Learn how to integrate a card reader in your app at [payworks.mpymnt.com](http://www.payworks.mpymnt.com).
+
 ## Install
 
     pod repo add mpymnt http://pods.mpymnt.com/io.mpymnt.repo.pods.git
@@ -8,12 +10,21 @@ In your podfile:
 
     pod 'mpos.blocks.signature'
 
-### Use the predefined signature screen
+## Use
 
-To start right away, you can use the predefined view controller which shows a signature screen with some information to the user. To capture a signature, create a PWBSignatureViewController instance first.
+Import the header
+
+   #import <mpos.blocks.signature/MPBSignatureViewController.h>
+
+Show it and register callbacks
 
 ```objectivec
 MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc]init];
+[self presentViewController:signatureViewController animated:YES completion:nil];
+[signatureViewController registerOnPay:^{
+        UIImage* signature = [signatureViewController signature];            
+    } onCancel:^{
+    }];
 ```
 
 Now, customize logo, title, amount and text beneath the signature line to match your application.

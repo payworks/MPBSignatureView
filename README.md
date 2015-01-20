@@ -42,6 +42,6 @@ signatureViewController.signatureText = @"I hereby authorize the payment of 5.99
 ## Display as a modal on the iPad
 
 ```objectivec
-    self.signatureViewController.modalPresentationStyle = UIModalPresentationFormSheet;
-   // to adjust the size, use self.signatureViewController.preferredContentSize = CGSizeMake(800, 500);
+self.signatureViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+// to adjust the size, use self.signatureViewController.preferredContentSize = CGSizeMake(800, 500);
 ```

@@ -1,1 +1,3 @@
-../l10n/Localizable-nl_BE.strings
+"cancel" = "Afbreken";
+"pay" = "Betalen";
+"signatureTextFormat" = "Hiermee machtig ik de betaling van %@ aan %@.";

@@ -1,1 +1,3 @@
-../l10n/Localizable-de_DE.strings
+"cancel" = "Abbrechen";
+"pay" = "Bezahlen";
+"signatureTextFormat" = "Hiermit autorisiere ich die Zahlung in Höhe von %@ an %@.";

@@ -1,1 +1,3 @@
-../l10n/Localizable-it_IT.strings
+"cancel" = "Interrompi";
+"pay" = "Effettua pagamento";
+"signatureTextFormat" = "Con la presente autorizzo il pagamento dell’importo di %@ a %@.";

@@ -1,4 +1,4 @@
-![signature view](https://bitbucket.org/payworks/mpos.ios.blocks.signatureview/raw/b9bb9a553242d9a5150f4b20cda018abaf04644d/screen.png "Signature View")
+![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/aebcac7eb49056e7da8e6fcd6138c233ed3d1830/screen1.png "Signature View")
 
 Works perfectly with the mPOS SDK by [payworks](http://www.payworksmobile.com). Learn how to integrate a card reader in your app at [payworks.mpymnt.com](http://www.payworks.mpymnt.com).
 
@@ -40,6 +40,8 @@ signatureViewController.signatureText = @"I hereby authorize the payment of 5.99
 ```
 
 ## Display as a modal on the iPad
+
+![signature view modal](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/aebcac7eb49056e7da8e6fcd6138c233ed3d1830/screen2.png "Signature View Modal")
 
 ```objectivec
 self.signatureViewController.modalPresentationStyle = UIModalPresentationFormSheet;

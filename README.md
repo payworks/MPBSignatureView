@@ -20,6 +20,8 @@ Show it and register callbacks
 
 ```objectivec
 MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc]init];
+signatureViewController.merchantName = @"Fruit Shop";
+signatureViewController.amountText = @"5.99 €";
 [self presentViewController:signatureViewController animated:YES completion:nil];
 [signatureViewController registerOnPay:^{
     UIImage* signature = [signatureViewController signature];  
@@ -29,14 +31,6 @@ MPBSignatureViewController* signatureViewController = [[MPBSignatureViewControll
    // if you use the payworks mPOS SDK, continue the transaction with
    // [paymentProcess continueWithCustomerSignature: nil verified: NO];
 }];
-```
-
-Customize merchant name, amount and approval text:
-
-```objectivec
-signatureViewController.merchantName = @"Fruit Shop";
-signatureViewController.amountText = @"5.99 €";
-signatureViewController.signatureText = @"I hereby authorize the payment of 5.99 € to Fruit Shop.";
 ```
 
 ## Display as a modal on the iPad

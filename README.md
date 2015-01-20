@@ -14,7 +14,7 @@ In your podfile:
 
 Import the header
 
-   #import <mpos.blocks.signature/MPBSignatureViewController.h>
+    #import <mpos.blocks.signature/MPBSignatureViewController.h>
 
 Show it and register callbacks
 

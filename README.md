@@ -38,3 +38,10 @@ signatureViewController.merchantName = @"Fruit Shop";
 signatureViewController.amountText = @"5.99 €";
 signatureViewController.signatureText = @"I hereby authorize the payment of 5.99 € to Fruit Shop.";
 ```
+
+## Display as a modal on the iPad
+
+```objectivec
+    self.signatureViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+   // to adjust the size, use self.signatureViewController.preferredContentSize = CGSizeMake(800, 500);
+```

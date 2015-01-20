@@ -1,6 +1,4 @@
-# mpos payment blocks
-
-Kickstart your development of iOS payment applications with often-used payment application components by payworks! mpos payment blocks are free-to-use UI components such as fields for capturing customer signatures, … (more to come!) taking the programming burden out of your hands and letting you focus on creating awesome applications.
+![signature view](https://bitbucket.org/payworks/mpos.ios.blocks.signatureview/raw/b9bb9a553242d9a5150f4b20cda018abaf04644d/screen.png "Signature View")
 
 The payment blocks are made available on our CocoaPod podspec repository. To use the payment blocks, add 
 http://pods.mpymnt.com/mpymnt/io.mpymnt.repo.pods.git
@@ -22,8 +20,6 @@ To use the SignatureView in your project, you should have an Xcode project with 
 Running `pod install` might take a while, since the Cocos2d framework, on which the signature view depends has about 450 MB which have to be downloaded. Don't worry, this will not all be compiled into your app.
 
 ### Use the predefined signature screen
-
-![signature view](https://bitbucket.org/payworks/mpos.ios.blocks.signatureview/raw/b9bb9a553242d9a5150f4b20cda018abaf04644d/screen.png "Signature View")
 
 To start right away, you can use the predefined view controller which shows a signature screen with some information to the user. To capture a signature, create a PWBSignatureViewController instance first.
 

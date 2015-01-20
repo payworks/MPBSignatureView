@@ -22,9 +22,9 @@ Show it and register callbacks
 MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc]init];
 [self presentViewController:signatureViewController animated:YES completion:nil];
 [signatureViewController registerOnPay:^{
-        UIImage* signature = [signatureViewController signature];            
-    } onCancel:^{
-    }];
+    UIImage* signature = [signatureViewController signature];            
+} onCancel:^{
+}];
 ```
 
 Now, customize logo, title, amount and text beneath the signature line to match your application.

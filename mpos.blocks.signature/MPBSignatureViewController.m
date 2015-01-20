@@ -79,7 +79,7 @@
 }
 
 - (void) updateSignatureText {
-    self.signatureTextLabel.text = [NSString stringWithFormat:self.signatureTextFormat, self.amountText, self.merchantName];
+    self.signatureTextLabel.text = [NSString stringWithFormat:self.signatureTextFormat, _amountText, _merchantName];
 }
 
 - (void)setMerchantName:(NSString *)merchantName {
@@ -173,10 +173,10 @@
     self.topBackground.frame=CGRectMake(0, 0, self.bounds.size.width,backgroundsHeight);
     self.bottomBackground.frame =CGRectMake(0, self.bounds.size.height-backgroundsHeight, self.bounds.size.width,backgroundsHeight);
     
-    self.merchantNameLabel.frame = CGRectMake(10, 0, self.bounds.size.width * 2 / 3, backgroundsHeight);
-    self.amountTextLabel.frame = CGRectMake(self.bounds.size.width/2, 0, self.bounds.size.width / 2 - 12, backgroundsHeight);
+    self.merchantNameLabel.frame = CGRectMake(10, 0, self.bounds.size.width * 3 / 5, backgroundsHeight);
+    self.amountTextLabel.frame = CGRectMake(self.bounds.size.width * 3.0/ 5.0, 0, self.bounds.size.width * 2.0 / 5.0 - 12, backgroundsHeight);
     
-    self.signatureTextLabel.frame = CGRectMake(0, self.bounds.size.height-backgroundsHeight - 25, self.bounds.size.width, self.signatureTextLabel.frame.size.height);
+    self.signatureTextLabel.frame = CGRectMake(10, self.bounds.size.height-backgroundsHeight - 25, self.bounds.size.width-20, self.signatureTextLabel.frame.size.height);
     self.signatureLineView.frame =CGRectMake(22,self.signatureTextLabel.frame.origin.y - 5, self.bounds.size.width-44, 0.5f);
 
     self.payButton.frame = CGRectMake(0.382*self.bounds.size.width, self.bounds.size.height-backgroundsHeight, 0.618*self.bounds.size.width, backgroundsHeight);
@@ -214,6 +214,8 @@
     self.merchantNameLabel.backgroundColor = [UIColor clearColor];
     [self.merchantNameLabel setText:self.merchantName];
     [self.merchantNameLabel setFont:self.largeFont];
+    self.merchantNameLabel.numberOfLines = 1;
+    self.merchantNameLabel.adjustsFontSizeToFitWidth = YES;
     
     [self.view addSubview:self.merchantNameLabel];
 }
@@ -223,6 +225,8 @@
     [self.amountTextLabel setText:self.amountText];
     self.amountTextLabel.textAlignment = NSTextAlignmentRight;
     [self.amountTextLabel setFont:self.largeFont];
+    self.amountTextLabel.numberOfLines = 1;
+    self.amountTextLabel.adjustsFontSizeToFitWidth = YES;
     
     [self.view addSubview:self.amountTextLabel];
 }
@@ -231,11 +235,12 @@
     [self.signatureTextLabel setFont:self.smallFont];
     [self updateSignatureText];
     self.signatureTextLabel.textColor = self.colorLine;
-    self.signatureTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.signatureTextLabel.numberOfLines = 0;
+    self.signatureTextLabel.numberOfLines = 1;
     [self.signatureTextLabel sizeToFit];
     self.signatureTextLabel.textAlignment = NSTextAlignmentCenter;
     self.signatureTextLabel.backgroundColor = [UIColor clearColor];
+    self.signatureTextLabel.adjustsFontSizeToFitWidth = YES;
+    self.signatureTextLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     
     [self.view addSubview:self.signatureTextLabel];
 }

@@ -54,8 +54,8 @@
     signatureViewController.modalPresentationStyle = style;
     signatureViewController.preferredContentSize = CGSizeMake(800, 500);
         
-    signatureViewController.merchantName = @"Fruit Shop";
-    signatureViewController.amountText = @"5.99 €";
+    signatureViewController.merchantName = @"Antiques + Valuables GmbH";
+    signatureViewController.amountText = @"421.99 €";
         
     [signatureViewController registerOnPay:^{
             

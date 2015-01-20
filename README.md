@@ -4,6 +4,8 @@
 
     pod repo add mpymnt http://pods.mpymnt.com/io.mpymnt.repo.pods.git
 
+In your podfile:
+
     pod 'mpos.blocks.signature'
 
 ### Use the predefined signature screen

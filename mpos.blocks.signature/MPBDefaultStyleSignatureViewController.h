@@ -24,19 +24,12 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "MPBSignatureFieldViewController.h"
+#import "MPBCustomStyleSignatureViewController.h"
 
-@interface MPBSignatureViewController : MPBSignatureFieldViewController
+@interface MPBDefaultStyleSignatureViewController : MPBCustomStyleSignatureViewController
 
 // Customizable properties
-@property (nonatomic, strong) NSString* merchantName;
-@property (nonatomic, strong) NSString* amountText;
-@property (nonatomic, strong) NSString* signatureTextFormat;
-@property (nonatomic, strong) UIColor* signatureColor;
-@property (nonatomic, strong) NSString* payButtonText;
-@property (nonatomic, strong) NSString* cancelButtonText;
 @property (nonatomic, strong) UIColor* buttonColor;
-
 @property (nonatomic, strong) UIColor* colorLine;
 @property (nonatomic, strong) UIColor* colorBackground;
 
@@ -44,6 +37,5 @@
 @property UIFont* mediumFont;
 @property UIFont* smallFont;
 
-- (void)registerOnPay:(void (^)(void))payBlock onCancel:(void (^)(void))cancelBlock;
 
 @end

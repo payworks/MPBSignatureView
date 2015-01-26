@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DA694021A765958009833EA /* MPBSignatureViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */; };
 		2DCA44A11A6E6F3A000C3A02 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA449D1A6E6F32000C3A02 /* Localizable.strings */; };
 		2DD972A01A6D645C009F1107 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD9729F1A6D645C009F1107 /* OpenGLES.framework */; };
 		2DD972A61A6D64A6009F1107 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD972A51A6D64A6009F1107 /* GLKit.framework */; };
@@ -24,9 +25,8 @@
 		CF159BFF1823B7C700A797FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF159BE11823B7C700A797FE /* UIKit.framework */; };
 		CF159C071823B7C700A797FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF159C051823B7C700A797FE /* InfoPlist.strings */; };
 		CF159C091823B7C700A797FE /* mpos_ios_blocks_signatureviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF159C081823B7C700A797FE /* mpos_ios_blocks_signatureviewTests.m */; };
-		CF4B565018426BCE002687E0 /* MPBTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4B564F18426BCE002687E0 /* MPBTestViewController.m */; };
-		CFAB7D2F185375C30013D538 /* MPBSignatureFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAB7D2C185375C30013D538 /* MPBSignatureFieldViewController.m */; };
-		CFAB7D30185375C30013D538 /* MPBSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAB7D2E185375C30013D538 /* MPBSignatureViewController.m */; };
+		CFAB7D2F185375C30013D538 /* MPBCustomStyleSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAB7D2C185375C30013D538 /* MPBCustomStyleSignatureViewController.m */; };
+		CFAB7D30185375C30013D538 /* MPBDefaultStyleSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFAB7D2E185375C30013D538 /* MPBDefaultStyleSignatureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2DA694001A765958009833EA /* MPBSignatureViewControllerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewControllerConfiguration.h; sourceTree = "<group>"; };
+		2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewControllerConfiguration.m; sourceTree = "<group>"; };
 		2DCA449C1A6E6F32000C3A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DCA449E1A6E6F34000C3A02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2DCA449F1A6E6F35000C3A02 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -72,12 +74,10 @@
 		CF159C041823B7C700A797FE /* mpos.ios.blocks.signatureviewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mpos.ios.blocks.signatureviewTests-Info.plist"; sourceTree = "<group>"; };
 		CF159C061823B7C700A797FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CF159C081823B7C700A797FE /* mpos_ios_blocks_signatureviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mpos_ios_blocks_signatureviewTests.m; sourceTree = "<group>"; };
-		CF4B564E18426BCE002687E0 /* MPBTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBTestViewController.h; sourceTree = "<group>"; };
-		CF4B564F18426BCE002687E0 /* MPBTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBTestViewController.m; sourceTree = "<group>"; };
-		CFAB7D2B185375C30013D538 /* MPBSignatureFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureFieldViewController.h; sourceTree = "<group>"; };
-		CFAB7D2C185375C30013D538 /* MPBSignatureFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureFieldViewController.m; sourceTree = "<group>"; };
-		CFAB7D2D185375C30013D538 /* MPBSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewController.h; sourceTree = "<group>"; };
-		CFAB7D2E185375C30013D538 /* MPBSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewController.m; sourceTree = "<group>"; };
+		CFAB7D2B185375C30013D538 /* MPBCustomStyleSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBCustomStyleSignatureViewController.h; sourceTree = "<group>"; };
+		CFAB7D2C185375C30013D538 /* MPBCustomStyleSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBCustomStyleSignatureViewController.m; sourceTree = "<group>"; };
+		CFAB7D2D185375C30013D538 /* MPBDefaultStyleSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBDefaultStyleSignatureViewController.h; sourceTree = "<group>"; };
+		CFAB7D2E185375C30013D538 /* MPBDefaultStyleSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBDefaultStyleSignatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +164,6 @@
 		CF159BE31823B7C700A797FE /* mpos.ios.blocks.signatureview */ = {
 			isa = PBXGroup;
 			children = (
-				CF4B564E18426BCE002687E0 /* MPBTestViewController.h */,
-				CF4B564F18426BCE002687E0 /* MPBTestViewController.m */,
 				CF159BEC1823B7C700A797FE /* MPBAppDelegate.h */,
 				CF159BED1823B7C700A797FE /* MPBAppDelegate.m */,
 				CF159BEF1823B7C700A797FE /* Main.storyboard */,
@@ -209,10 +207,12 @@
 		CFAB7D2A185375C30013D538 /* mpos.blocks.signature */ = {
 			isa = PBXGroup;
 			children = (
-				CFAB7D2B185375C30013D538 /* MPBSignatureFieldViewController.h */,
-				CFAB7D2C185375C30013D538 /* MPBSignatureFieldViewController.m */,
-				CFAB7D2D185375C30013D538 /* MPBSignatureViewController.h */,
-				CFAB7D2E185375C30013D538 /* MPBSignatureViewController.m */,
+				CFAB7D2B185375C30013D538 /* MPBCustomStyleSignatureViewController.h */,
+				CFAB7D2C185375C30013D538 /* MPBCustomStyleSignatureViewController.m */,
+				CFAB7D2D185375C30013D538 /* MPBDefaultStyleSignatureViewController.h */,
+				CFAB7D2E185375C30013D538 /* MPBDefaultStyleSignatureViewController.m */,
+				2DA694001A765958009833EA /* MPBSignatureViewControllerConfiguration.h */,
+				2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */,
 			);
 			path = mpos.blocks.signature;
 			sourceTree = "<group>";
@@ -320,12 +320,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF159BEE1823B7C700A797FE /* MPBAppDelegate.m in Sources */,
-				CF4B565018426BCE002687E0 /* MPBTestViewController.m in Sources */,
 				CF159BEA1823B7C700A797FE /* main.m in Sources */,
 				2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */,
+				2DA694021A765958009833EA /* MPBSignatureViewControllerConfiguration.m in Sources */,
 				CF159BF41823B7C700A797FE /* MPBViewController.m in Sources */,
-				CFAB7D2F185375C30013D538 /* MPBSignatureFieldViewController.m in Sources */,
-				CFAB7D30185375C30013D538 /* MPBSignatureViewController.m in Sources */,
+				CFAB7D2F185375C30013D538 /* MPBCustomStyleSignatureViewController.m in Sources */,
+				CFAB7D30185375C30013D538 /* MPBDefaultStyleSignatureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>83639D589341ADB212D98F40DED652896CF49E4E</key>
-		<string>../../l10n/</string>
+		<string>../../l10n</string>
 		<key>98013C8486C71F5C042237CD197DB70AFBABEAB6</key>
 		<string>../..</string>
 	</dict>

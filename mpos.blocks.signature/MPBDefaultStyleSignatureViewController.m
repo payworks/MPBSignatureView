@@ -107,7 +107,7 @@
 
     self.continueButton.frame = CGRectMake(0.382*self.bounds.size.width, self.bounds.size.height-backgroundsHeight, 0.618*self.bounds.size.width, backgroundsHeight);
     self.cancelButton.frame = CGRectMake(0, self.bounds.size.height-backgroundsHeight, 0.382*self.bounds.size.width, backgroundsHeight);
-    self.clearButton.frame = CGRectMake(self.bounds.size.width-80, backgroundsHeight, 80, 80);
+    self.clearButton.frame = CGRectMake(self.bounds.size.width-200, backgroundsHeight, 200, 80);
     
     self.signatureView.frame = CGRectMake(0, backgroundsHeight, self.bounds.size.width, self.bounds.size.height - backgroundsHeight * 2);
     

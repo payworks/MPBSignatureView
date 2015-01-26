@@ -8,7 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2DA694021A765958009833EA /* MPBSignatureViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */; };
-		2DCA44A11A6E6F3A000C3A02 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA449D1A6E6F32000C3A02 /* Localizable.strings */; };
+		2DA694071A76A9E0009833EA /* maestro_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694041A76A9E0009833EA /* maestro_image.png */; };
+		2DA694081A76A9E0009833EA /* mastercard_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694051A76A9E0009833EA /* mastercard_image.png */; };
+		2DA694091A76A9E0009833EA /* visacard_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694061A76A9E0009833EA /* visacard_image.png */; };
+		2DA6940B1A76AAD1009833EA /* visacard_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA6940A1A76AAD1009833EA /* visacard_image@2x.png */; };
+		2DA6940D1A76AAE0009833EA /* maestro_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA6940C1A76AAE0009833EA /* maestro_image@2x.png */; };
+		2DA6940F1A76AAE4009833EA /* mastercard_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA6940E1A76AAE4009833EA /* mastercard_image@2x.png */; };
+		2DA694131A76AB2F009833EA /* maestro_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694101A76AB2F009833EA /* maestro_image@3x.png */; };
+		2DA694141A76AB2F009833EA /* mastercard_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694111A76AB2F009833EA /* mastercard_image@3x.png */; };
+		2DA694151A76AB2F009833EA /* visacard_image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694121A76AB2F009833EA /* visacard_image@3x.png */; };
 		2DD972A01A6D645C009F1107 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD9729F1A6D645C009F1107 /* OpenGLES.framework */; };
 		2DD972A61A6D64A6009F1107 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD972A51A6D64A6009F1107 /* GLKit.framework */; };
 		2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */; };
@@ -42,12 +50,15 @@
 /* Begin PBXFileReference section */
 		2DA694001A765958009833EA /* MPBSignatureViewControllerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewControllerConfiguration.h; sourceTree = "<group>"; };
 		2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewControllerConfiguration.m; sourceTree = "<group>"; };
-		2DCA449C1A6E6F32000C3A02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2DCA449E1A6E6F34000C3A02 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2DCA449F1A6E6F35000C3A02 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2DCA44A01A6E6F36000C3A02 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2DCA44A21A6E6F3B000C3A02 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		2DCA44A31A6E6F3D000C3A02 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2DA694041A76A9E0009833EA /* maestro_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maestro_image.png; path = Resources/maestro_image.png; sourceTree = "<group>"; };
+		2DA694051A76A9E0009833EA /* mastercard_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mastercard_image.png; path = Resources/mastercard_image.png; sourceTree = "<group>"; };
+		2DA694061A76A9E0009833EA /* visacard_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = visacard_image.png; path = Resources/visacard_image.png; sourceTree = "<group>"; };
+		2DA6940A1A76AAD1009833EA /* visacard_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "visacard_image@2x.png"; path = "Resources/visacard_image@2x.png"; sourceTree = "<group>"; };
+		2DA6940C1A76AAE0009833EA /* maestro_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maestro_image@2x.png"; path = "Resources/maestro_image@2x.png"; sourceTree = "<group>"; };
+		2DA6940E1A76AAE4009833EA /* mastercard_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mastercard_image@2x.png"; path = "Resources/mastercard_image@2x.png"; sourceTree = "<group>"; };
+		2DA694101A76AB2F009833EA /* maestro_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "maestro_image@3x.png"; path = "Resources/maestro_image@3x.png"; sourceTree = "<group>"; };
+		2DA694111A76AB2F009833EA /* mastercard_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mastercard_image@3x.png"; path = "Resources/mastercard_image@3x.png"; sourceTree = "<group>"; };
+		2DA694121A76AB2F009833EA /* visacard_image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "visacard_image@3x.png"; path = "Resources/visacard_image@3x.png"; sourceTree = "<group>"; };
 		2DD9729F1A6D645C009F1107 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2DD972A11A6D6466009F1107 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		2DD972A31A6D6479009F1107 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -106,6 +117,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DA694031A76A9C8009833EA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2DA694041A76A9E0009833EA /* maestro_image.png */,
+				2DA6940C1A76AAE0009833EA /* maestro_image@2x.png */,
+				2DA694051A76A9E0009833EA /* mastercard_image.png */,
+				2DA6940E1A76AAE4009833EA /* mastercard_image@2x.png */,
+				2DA694061A76A9E0009833EA /* visacard_image.png */,
+				2DA6940A1A76AAD1009833EA /* visacard_image@2x.png */,
+				2DA694101A76AB2F009833EA /* maestro_image@3x.png */,
+				2DA694111A76AB2F009833EA /* mastercard_image@3x.png */,
+				2DA694121A76AB2F009833EA /* visacard_image@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		2DFF3EF21A6D2C8B00C7B3A5 /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +154,7 @@
 		CF159BD11823B7C700A797FE = {
 			isa = PBXGroup;
 			children = (
+				2DA694031A76A9C8009833EA /* Resources */,
 				2DFF3EF21A6D2C8B00C7B3A5 /* External */,
 				CFAB7D2A185375C30013D538 /* mpos.blocks.signature */,
 				CF159BE31823B7C700A797FE /* mpos.ios.blocks.signatureview */,
@@ -178,7 +206,6 @@
 		CF159BE41823B7C700A797FE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2DCA449D1A6E6F32000C3A02 /* Localizable.strings */,
 				CF159BE51823B7C700A797FE /* mpos.ios.blocks.signatureview-Info.plist */,
 				CF159BE91823B7C700A797FE /* main.m */,
 				CF159BEB1823B7C700A797FE /* mpos.ios.blocks.signatureview-Prefix.pch */,
@@ -299,8 +326,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF159BF61823B7C700A797FE /* Images.xcassets in Resources */,
-				2DCA44A11A6E6F3A000C3A02 /* Localizable.strings in Resources */,
+				2DA6940D1A76AAE0009833EA /* maestro_image@2x.png in Resources */,
+				2DA694151A76AB2F009833EA /* visacard_image@3x.png in Resources */,
+				2DA694131A76AB2F009833EA /* maestro_image@3x.png in Resources */,
+				2DA6940B1A76AAD1009833EA /* visacard_image@2x.png in Resources */,
 				CF159BF11823B7C700A797FE /* Main.storyboard in Resources */,
+				2DA6940F1A76AAE4009833EA /* mastercard_image@2x.png in Resources */,
+				2DA694091A76A9E0009833EA /* visacard_image.png in Resources */,
+				2DA694071A76A9E0009833EA /* maestro_image.png in Resources */,
+				2DA694081A76A9E0009833EA /* mastercard_image.png in Resources */,
+				2DA694141A76AB2F009833EA /* mastercard_image@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,20 +383,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2DCA449D1A6E6F32000C3A02 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2DCA449C1A6E6F32000C3A02 /* Base */,
-				2DCA449E1A6E6F34000C3A02 /* en */,
-				2DCA449F1A6E6F35000C3A02 /* fr */,
-				2DCA44A01A6E6F36000C3A02 /* de */,
-				2DCA44A21A6E6F3B000C3A02 /* nl */,
-				2DCA44A31A6E6F3D000C3A02 /* it */,
-			);
-			name = Localizable.strings;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		CF159BEF1823B7C700A797FE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

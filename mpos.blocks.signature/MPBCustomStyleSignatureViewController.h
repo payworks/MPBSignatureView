@@ -38,6 +38,7 @@ typedef void (^MPBCustomStyleSignatureViewControllerCancel)();
 
 
 @property (nonatomic, strong) IBOutlet UIView *signatureView;
+@property (nonatomic, strong) IBOutlet UIImageView *schemeImageView;
 @property (nonatomic, strong) IBOutlet UILabel *merchantNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *formattedAmountLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *merchantImageView;

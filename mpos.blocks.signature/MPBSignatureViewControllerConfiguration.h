@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(int, MPBSignatureViewControllerConfigurationScheme) {
+    MPBSignatureViewControllerConfigurationSchemeVisa = 0,
+    MPBSignatureViewControllerConfigurationSchemeVpay,
+    MPBSignatureViewControllerConfigurationSchemeMastercard,
+    MPBSignatureViewControllerConfigurationSchemeMaestro
+};
+
 @interface MPBSignatureViewControllerConfiguration : NSObject
 
 @property (nonatomic, strong) NSString *merchantName;
 @property (nonatomic, strong) NSString *formattedAmount;
 
 @property (nonatomic, strong) UIImage *merchantImage;
-@property (nonatomic, strong) /* TODO: MAKE ENUM FOR ICONS */ NSString *schemeName;
+@property (nonatomic) MPBSignatureViewControllerConfigurationScheme scheme;
 
 - (instancetype)initWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount;
 + (instancetype)configurationWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount;

@@ -147,7 +147,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3p-bR-2Dq">
-                                        <rect key="frame" x="8" y="65" width="61" height="44"/>
+                                        <rect key="frame" x="8" y="65" width="135" height="44"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -165,6 +165,9 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDw-GU-ARD">
+                                        <rect key="frame" x="183" y="76" width="61" height="43"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92340353260869568" green="0.92340353260869568" blue="0.92340353260869568" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -181,6 +184,7 @@
                         <outlet property="continueButton" destination="O5Y-Kg-Kny" id="vKi-3T-6nl"/>
                         <outlet property="formattedAmountLabel" destination="f7K-VZ-8R6" id="ooX-fl-Uom"/>
                         <outlet property="legalTextLabel" destination="dRR-4p-1qc" id="QYl-4y-ygh"/>
+                        <outlet property="schemeImageView" destination="pDw-GU-ARD" id="iUA-Rr-7C4"/>
                         <outlet property="signatureView" destination="aac-X5-NRI" id="XTv-7S-pLK"/>
                     </connections>
                 </viewController>

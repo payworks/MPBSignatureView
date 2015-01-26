@@ -1,3 +1,4 @@
 "cancel" = "Abbrechen";
-"pay" = "Bezahlen";
 "signatureTextFormat" = "Hiermit autorisiere ich die Zahlung in Höhe von %@ an %@.";
+"clear" = "Neue Unterschrift";
+"continue" = "Weiter";

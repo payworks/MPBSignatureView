@@ -45,7 +45,9 @@
 
 - (IBAction)showCustomScreen:(id)sender {
     MPBCustomStyleSignatureViewController *vc = (MPBCustomStyleSignatureViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"signature"];
-    vc.configuration = [MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Antiques + Valuables GmbH" formattedAmount:@"421.99 €"];
+    MPBSignatureViewControllerConfiguration* config = [MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Antiques + Valuables GmbH" formattedAmount:@"421.99 €"];
+    config.scheme = MPBSignatureViewControllerConfigurationSchemeMaestro;
+    vc.configuration = config;
     vc.continueBlock = ^(UIImage *signature) {
         [self showImage: signature];
     };

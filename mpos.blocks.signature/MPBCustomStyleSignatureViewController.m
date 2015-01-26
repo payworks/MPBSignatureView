@@ -122,6 +122,22 @@
     [self.cancelButton setTitle:NSLocalizedString(@"cancel", nil) forState:UIControlStateNormal];
     [self.clearButton setTitle:NSLocalizedString(@"clear", nil) forState:UIControlStateNormal];
     [self disableContinueAndClearButtonsAnimated:NO];
+    self.schemeImageView.image = [self imageForScheme: self.configuration.scheme];
+    self.schemeImageView.contentMode = UIViewContentModeCenter;
+}
+
+- (UIImage*) imageForScheme: (MPBSignatureViewControllerConfigurationScheme) scheme {
+    switch (scheme) {
+        case MPBSignatureViewControllerConfigurationSchemeMaestro:
+            return [UIImage imageNamed:@"maestro_image.png"];
+        case MPBSignatureViewControllerConfigurationSchemeMastercard:
+            return [UIImage imageNamed:@"mastercard_image.png"];
+        case MPBSignatureViewControllerConfigurationSchemeVisa:
+        case MPBSignatureViewControllerConfigurationSchemeVpay:
+            return [UIImage imageNamed:@"visacard_image.png"];
+        default:
+            return nil;
+    }
 }
 
 - (void) setupTargets {

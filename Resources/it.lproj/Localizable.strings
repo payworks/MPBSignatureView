@@ -1,3 +1,4 @@
 "cancel" = "Interrompi";
-"pay" = "Effettua pagamento";
 "signatureTextFormat" = "Con la presente autorizzo il pagamento dell’importo di %@ a %@.";
+"clear" = "Nuova firma";
+"continue" = "Avanti";

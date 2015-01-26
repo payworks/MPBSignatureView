@@ -1,3 +1,4 @@
 "cancel" = "Afbreken";
-"pay" = "Betalen";
 "signatureTextFormat" = "Hiermee machtig ik de betaling van %@ aan %@.";
+"clear" = "Nieuwe handtekening";
+"continue" = "Verder";

@@ -25,6 +25,7 @@
 
 #import "MPBCustomStyleSignatureViewController.h"
 #import "PPSSignatureView.h"
+#import "MPBSignatureViewControllerPrivate.h"
 
 @interface MPBCustomStyleSignatureViewController () <PPSSignatureViewDelegate>
 
@@ -116,11 +117,11 @@
 - (void) setupViews {
     self.merchantNameLabel.text = self.configuration.merchantName;
     self.formattedAmountLabel.text = self.configuration.formattedAmount;
-    self.legalTextLabel.text = [NSString stringWithFormat:NSLocalizedString(@"signatureTextFormat", @""), self.configuration.formattedAmount, self.configuration.merchantName];
+    self.legalTextLabel.text = [NSString stringWithFormat:MPBSignatureViewLocalizedString(@"MPBSignatureViewSignatureTextFormat"), self.configuration.formattedAmount, self.configuration.merchantName];
     self.merchantImageView.image = self.configuration.merchantImage;
-    [self.continueButton  setTitle:NSLocalizedString(@"continue", nil) forState:UIControlStateNormal];
-    [self.cancelButton setTitle:NSLocalizedString(@"cancel", nil) forState:UIControlStateNormal];
-    [self.clearButton setTitle:NSLocalizedString(@"clear", nil) forState:UIControlStateNormal];
+    [self.continueButton  setTitle:MPBSignatureViewLocalizedString(@"MPBSignatureViewContinue") forState:UIControlStateNormal];
+    [self.cancelButton setTitle:MPBSignatureViewLocalizedString(@"MPBSignatureViewCancel") forState:UIControlStateNormal];
+    [self.clearButton setTitle:MPBSignatureViewLocalizedString(@"MPBSignatureViewClear") forState:UIControlStateNormal];
     [self disableContinueAndClearButtonsAnimated:NO];
     self.schemeImageView.image = [self imageForScheme: self.configuration.scheme];
     self.schemeImageView.contentMode = UIViewContentModeCenter;

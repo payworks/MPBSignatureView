@@ -39,8 +39,11 @@ NSString *MPBSignatureViewLocalizedString(NSString *stringToken) {
     if (!stringToken) return @"";
     
     NSString *appSpecificLocalizationString = NSLocalizedString(stringToken, @"");
+    NSString *appSpecificLocalizationString2 = NSLocalizedStringFromTable(stringToken, @"MPBSignatureView", nil);
     if (appSpecificLocalizationString && ![stringToken isEqualToString:appSpecificLocalizationString]) {
         return appSpecificLocalizationString;
+    } else if(appSpecificLocalizationString2 && ![stringToken isEqualToString:appSpecificLocalizationString2]) {
+        return appSpecificLocalizationString2;
     } else if (MPBSignatureViewBundle()) {
         NSString *bundleSpecificLocalizationString = NSLocalizedStringFromTableInBundle(stringToken, @"MPBSignatureView", MPBSignatureViewBundle(), @"");
         if (bundleSpecificLocalizationString)

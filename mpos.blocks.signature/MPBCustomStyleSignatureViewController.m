@@ -186,6 +186,14 @@
     return [self.signatureViewInternal signatureImage];
 }
 
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskLandscape;
+}
+
 
 
 @end

@@ -82,13 +82,7 @@
 }
 
 
-- (BOOL)shouldAutorotate {
-    return YES;
-}
 
-- (NSUInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskLandscape;
-}
 
 - (void)viewWillLayoutSubviews {
     self.bounds = self.view.bounds;

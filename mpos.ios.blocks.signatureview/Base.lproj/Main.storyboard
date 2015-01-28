@@ -28,8 +28,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zer-IN-pSq">
-                                <rect key="frame" x="67" y="122" width="194" height="44"/>
-                                <state key="normal" title="custom Screen">
+                                <rect key="frame" x="67" y="122" width="76" height="44"/>
+                                <state key="normal" title="custom 1">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -55,6 +55,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dah-0J-Lut">
                                 <rect key="frame" x="40" y="260" width="240" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-sa-gLh">
+                                <rect key="frame" x="185" y="122" width="76" height="44"/>
+                                <state key="normal" title="Pay">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.1960784314" green="0.30980392159999998" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showPayButtonStyleSignatureView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Jr0-dL-6SH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -69,50 +79,66 @@
         <!--Custom Style Signature View Controller-->
         <scene sceneID="qBy-da-qIc">
             <objects>
-                <viewController id="rGL-op-e8p" customClass="MPBCustomStyleSignatureViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="paybutton" id="rGL-op-e8p" customClass="MPBCustomStyleSignatureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kui-qr-TOm"/>
                         <viewControllerLayoutGuide type="bottom" id="O5A-Hk-WGz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Yk-ce-XLI">
-                        <rect key="frame" x="0.0" y="20" width="568" height="300"/>
+                        <rect key="frame" x="0.0" y="20" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AU-Qr-7Lr">
-                                <rect key="frame" x="55" y="20" width="185" height="21"/>
+                                <rect key="frame" x="63" y="20" width="185" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2B-RU-XQY">
+                                <rect key="frame" x="373" y="9" width="179" height="44"/>
+                                <state key="normal" title="Clear"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO6-dL-IYB">
-                                <rect key="frame" x="426" y="249" width="126" height="44"/>
+                                <rect key="frame" x="426" y="269" width="126" height="44"/>
                                 <state key="normal" title="Pay">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeC-fO-FmT">
-                                <rect key="frame" x="16" y="249" width="151" height="44"/>
+                                <rect key="frame" x="16" y="269" width="151" height="44"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axZ-hp-R5b">
-                                <rect key="frame" x="5" y="15" width="42" height="31"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkN-F9-GOR">
+                                <rect key="frame" x="5" y="60" width="568" height="180"/>
+                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5i5-Nm-EeK">
-                                <rect key="frame" x="16" y="213" width="536" height="1"/>
+                                <rect key="frame" x="16" y="245" width="536" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2B-RU-XQY">
-                                <rect key="frame" x="463" y="15" width="89" height="44"/>
-                                <state key="normal" title="Clear"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7B-4r-0NX">
+                                <rect key="frame" x="16" y="250" width="536" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="axZ-hp-R5b">
+                                <rect key="frame" x="16" y="15" width="42" height="31"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="cancelButton" destination="TeC-fO-FmT" id="gua-wJ-dyQ"/>
+                        <outlet property="clearButton" destination="R2B-RU-XQY" id="Yek-ns-dea"/>
+                        <outlet property="continueButton" destination="YO6-dL-IYB" id="8PJ-6J-0pI"/>
+                        <outlet property="formattedAmountLabel" destination="1AU-Qr-7Lr" id="smp-ia-Cts"/>
+                        <outlet property="legalTextLabel" destination="s7B-4r-0NX" id="y25-T6-DkX"/>
                         <outlet property="schemeImageView" destination="axZ-hp-R5b" id="IAA-i4-fUs"/>
+                        <outlet property="signatureView" destination="hkN-F9-GOR" id="35u-E9-BmZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkX-ba-liE" userLabel="First Responder" sceneMemberID="firstResponder"/>

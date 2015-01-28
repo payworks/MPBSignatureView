@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'mpos.blocks.signature'
   s.version  = '1.3.7'
-  s.platform = :ios, '5.0'
+  s.platform = :ios, '8.0'
   s.license  = {:type => 'MIT'}
   s.summary  = 'Signature Field'
   s.homepage = 'http://www.payworksmobile.com'

@@ -42,3 +42,7 @@ MPBDefaultStyleSignatureViewController* signatureViewController =
 self.signatureViewController.modalPresentationStyle = UIModalPresentationFormSheet;
 // to adjust the size, use self.signatureViewController.preferredContentSize = CGSizeMake(800, 500);
 ```
+
+## Credits
+
+Thanks for [Jason Harwig](https://github.com/jharwig) for his great [PPSSignatureView](https://github.com/jharwig/PPSSignatureView).

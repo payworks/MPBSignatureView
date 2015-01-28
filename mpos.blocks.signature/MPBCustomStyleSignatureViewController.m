@@ -51,7 +51,7 @@
 }
 
 + (instancetype)controllerWithConfiguration:(MPBSignatureViewControllerConfiguration*)configuration {
-    id controller = [[MPBCustomStyleSignatureViewController alloc] initWithConfiguration: configuration];
+    id controller = [[self alloc] initWithConfiguration: configuration];
     return controller;
 }
 

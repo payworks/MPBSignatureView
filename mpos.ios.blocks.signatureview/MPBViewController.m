@@ -24,8 +24,7 @@
  */
 
 #import "MPBViewController.h"
-#import "MPBDefaultStyleSignatureViewController.h"
-#import "MPBCustomStyleSignatureViewController.h"
+#import "mpos.blocks.signature.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface MPBViewController ()

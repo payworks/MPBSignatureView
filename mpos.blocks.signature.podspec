@@ -10,7 +10,6 @@ Pod::Spec.new do |s|
   s.description = 'A View/Controller to capture a users signature on screen and access it as an UIImage'
   s.source_files = 'mpos.blocks.signature/*.{h,m}', 'External/**/*.{h,m}'
   s.resource_bundle  = { 'MPBSignatureViewResources' => ['*.lproj'] }
-  s.preserve_paths = 'l10n'
   s.requires_arc =  true
   s.frameworks = 'GLKit', 'OpenGLES'
 end

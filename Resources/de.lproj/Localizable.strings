@@ -1,4 +1,4 @@
-"cancel" = "Abbrechen";
-"signatureTextFormat" = "Hiermit autorisiere ich die Zahlung in Höhe von %@ an %@.";
-"clear" = "Neue Unterschrift";
-"continue" = "Weiter";
+"MPBSignatureViewCancel" = "Abbrechen";
+"MPBSignatureViewSignatureTextFormat" = "Hiermit autorisiere ich die Zahlung in Höhe von %@ an %@.";
+"MPBSignatureViewClear" = "Neue Unterschrift";
+"MPBSignatureViewContinue" = "Weiter";

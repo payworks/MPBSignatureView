@@ -21,9 +21,8 @@ Import the header
 Show it and register callbacks
 
 ```objectivec
-MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc]init];
-signatureViewController.merchantName = @"Fruit Shop";
-signatureViewController.amountText = @"5.99 €";
+MPBDefaultStyleSignatureViewController* signatureViewController =
+    [[MPBDefaultStyleSignatureViewController alloc]initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Fruit Shop" formattedAmount:@"5.99 €"]];
 [self presentViewController:signatureViewController animated:YES completion:nil];
 [signatureViewController registerOnPay:^{
     UIImage* signature = [signatureViewController signature];  

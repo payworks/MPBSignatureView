@@ -1,4 +1,4 @@
-"cancel" = "Afbreken";
-"signatureTextFormat" = "Hiermee machtig ik de betaling van %@ aan %@.";
-"clear" = "Nieuwe handtekening";
-"continue" = "Verder";
+"MPBSignatureViewCancel" = "Afbreken";
+"MPBSignatureViewSignatureTextFormat" = "Hiermee machtig ik de betaling van %@ aan %@.";
+"MPBSignatureViewClear" = "Nieuwe handtekening";
+"MPBSignatureViewContinue" = "Verder";

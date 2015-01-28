@@ -23,6 +23,7 @@
 		2DA6945E1A78EFE8009833EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694531A78EFE8009833EA /* Localizable.strings */; };
 		2DA6945F1A78EFE8009833EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694561A78EFE8009833EA /* Localizable.strings */; };
 		2DA694601A78EFE8009833EA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694591A78EFE8009833EA /* Localizable.strings */; };
+		2DA694631A793357009833EA /* MPBSignatureViewControllerPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA694621A793357009833EA /* MPBSignatureViewControllerPrivate.m */; };
 		2DD972A01A6D645C009F1107 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD9729F1A6D645C009F1107 /* OpenGLES.framework */; };
 		2DD972A61A6D64A6009F1107 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD972A51A6D64A6009F1107 /* GLKit.framework */; };
 		2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */; };
@@ -72,6 +73,8 @@
 		2DA694541A78EFE8009833EA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		2DA694571A78EFE8009833EA /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = Localizable.strings; sourceTree = "<group>"; };
 		2DA6945A1A78EFE8009833EA /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = Localizable.strings; sourceTree = "<group>"; };
+		2DA694611A793357009833EA /* MPBSignatureViewControllerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewControllerPrivate.h; sourceTree = "<group>"; };
+		2DA694621A793357009833EA /* MPBSignatureViewControllerPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewControllerPrivate.m; sourceTree = "<group>"; };
 		2DD9729F1A6D645C009F1107 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2DD972A11A6D6466009F1107 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		2DD972A31A6D6479009F1107 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -314,6 +317,8 @@
 				2DA694001A765958009833EA /* MPBSignatureViewControllerConfiguration.h */,
 				2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */,
 				2DA694481A78EF17009833EA /* mpos.blocks.signature.h */,
+				2DA694611A793357009833EA /* MPBSignatureViewControllerPrivate.h */,
+				2DA694621A793357009833EA /* MPBSignatureViewControllerPrivate.m */,
 			);
 			path = mpos.blocks.signature;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF159BEE1823B7C700A797FE /* MPBAppDelegate.m in Sources */,
+				2DA694631A793357009833EA /* MPBSignatureViewControllerPrivate.m in Sources */,
 				CF159BEA1823B7C700A797FE /* main.m in Sources */,
 				2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */,
 				2DA694021A765958009833EA /* MPBSignatureViewControllerConfiguration.m in Sources */,

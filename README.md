@@ -15,23 +15,33 @@ In your podfile:
 
 Import the header
 
-    #import <mpos.blocks.signature/MPBSignatureViewController.h>
+    #import <MPBSignatureViewController/MPBSignatureViewController.h>
 
 Show it and register callbacks
 
 ```objectivec
-MPBDefaultStyleSignatureViewController* signatureViewController =
-    [[MPBDefaultStyleSignatureViewController alloc]initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Fruit Shop" formattedAmount:@"5.99 €"]];
-[self presentViewController:signatureViewController animated:YES completion:nil];
-[signatureViewController registerOnPay:^{
-    UIImage* signature = [signatureViewController signature];  
+MPBSignatureViewControllerConfiguration* config = [MPBSignatureViewControllerConfiguration 
+    configurationWithMerchantName:@"Antiques + Valuables GmbH"
+    formattedAmount:@"421.99 €"];
+// some styles display the scheme
+config.scheme = MPBSignatureViewControllerConfigurationSchemeMaestro;
+MPBMposUIStyleSignatureViewController *vc = [[MPBMposUIStyleSignatureViewController alloc] initWithConfiguration: config];
+vc.continueBlock = ^(UIImage *signature) {
    // if you use the payworks mPOS SDK, continue the transaction with
    // [paymentProcess continueWithCustomerSignature:signature verified:YES];
-} onCancel:^{
+};
+vc.cancelBlock =^{
    // if you use the payworks mPOS SDK, continue the transaction with
    // [paymentProcess continueWithCustomerSignature: nil verified: NO];
-}];
+};
+    
+[self presentViewController:vc animated:YES completion:nil];
 ```
+
+## Styles
+
+* `MPBMposUIStyleSignatureViewController`
+* `MPBDefaultStyleSignatureViewController`
 
 ## Display as a modal on the iPad
 
@@ -40,6 +50,29 @@ MPBDefaultStyleSignatureViewController* signatureViewController =
 ```objectivec
 self.signatureViewController.modalPresentationStyle = UIModalPresentationFormSheet;
 // to adjust the size, use self.signatureViewController.preferredContentSize = CGSizeMake(800, 500);
+```
+
+## Custom Style
+
+You can also create a custom style in your storyboard:
+
+1. Create a View Controller in your storyboard.
+2. Enter `MPBCustomStyleSignatureViewController` as Custom Class.
+3. Create the following UI elements in your view controller and wire it with the respective properties:
+ - A 'continue' button (`continueButton`) to continue with the signature
+ - A 'cancel' button (`cancelButton`) to cancel the transaction
+ - A 'clear' button (`clearButton`) that allows the shopper to enter a new signature
+ - A label that shows the amount that is due (`formattedAmountLabel`)
+ - A label that shows legal text ("I hereby authorize...") (`legalTextLabel`)
+ - A UIView where the shopper should enter his/her signature (`signatureView`)
+ - Optional: A label that shows the merchant name (`merchantNameLabel`)
+ - Optional: An image view that shows the merchant's logo (`merchantImageView`)
+ - Optional: An image view that displays the scheme used (`schemeImageView`)
+4. Give this view a Storyboard ID. Use this storyboard id to instantiate your view controller:
+
+```objectivec
+MPBCustomStyleSignatureViewController *vc = (MPBCustomStyleSignatureViewController *)[self.storyboard instantiateViewControllerWithIdentifier:identifier];
+// ... continue as with the other examples
 ```
 
 ## Credits

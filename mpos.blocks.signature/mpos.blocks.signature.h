@@ -29,5 +29,6 @@
 #import "MPBCustomStyleSignatureViewController.h"
 #import "MPBDefaultStyleSignatureViewController.h"
 #import "MPBSignatureViewControllerConfiguration.h"
+#import "MPBMposUIStyleSignatureViewController.h"
 
 #endif

@@ -52,11 +52,11 @@
 }
 
 - (IBAction)modal:(id)sender {
-    [self showModal:UIModalPresentationFormSheet];
+    [self showModal:UIModalPresentationFormSheet style:[MPBDefaultStyleSignatureViewController alloc]];
 }
 
 - (IBAction)showPredefinedScreen:(id)sender {
-    [self showModal:UIModalPresentationFullScreen];
+    [self showModal:UIModalPresentationFullScreen style:[MPBDefaultStyleSignatureViewController alloc]];
 }
 
 - (IBAction)showCustomScreen:(id)sender {
@@ -78,11 +78,14 @@
     
     [self presentViewController:vc animated:YES completion:nil];
 }
+- (IBAction)mposui:(id)sender {
+        [self showModal:UIModalPresentationFullScreen style:[MPBMposUIStyleSignatureViewController alloc]];
+}
 
-- (void)showModal:(UIModalPresentationStyle) style
+- (void)showModal:(UIModalPresentationStyle) style style:(MPBCustomStyleSignatureViewController*) controller
 {
     
-    MPBDefaultStyleSignatureViewController* signatureViewController = [[MPBDefaultStyleSignatureViewController alloc]initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Antiques + Valuables GmbH" formattedAmount:@"421.99 €"]];
+    MPBCustomStyleSignatureViewController* signatureViewController = [controller initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Antiques + Valuables GmbH" formattedAmount:@"421.99 €"]];
     signatureViewController.modalPresentationStyle = style;
     signatureViewController.preferredContentSize = CGSizeMake(800, 500);
     

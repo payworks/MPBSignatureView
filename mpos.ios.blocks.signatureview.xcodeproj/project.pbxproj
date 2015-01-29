@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D079CA81A7A235700157E8E /* MPBMposUIStyleSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D079CA71A7A235700157E8E /* MPBMposUIStyleSignatureViewController.m */; };
 		2DA694021A765958009833EA /* MPBSignatureViewControllerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */; };
 		2DA694071A76A9E0009833EA /* maestro_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694041A76A9E0009833EA /* maestro_image.png */; };
 		2DA694081A76A9E0009833EA /* mastercard_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA694051A76A9E0009833EA /* mastercard_image.png */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D079CA61A7A235700157E8E /* MPBMposUIStyleSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBMposUIStyleSignatureViewController.h; sourceTree = "<group>"; };
+		2D079CA71A7A235700157E8E /* MPBMposUIStyleSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBMposUIStyleSignatureViewController.m; sourceTree = "<group>"; };
 		2DA694001A765958009833EA /* MPBSignatureViewControllerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewControllerConfiguration.h; sourceTree = "<group>"; };
 		2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewControllerConfiguration.m; sourceTree = "<group>"; };
 		2DA694041A76A9E0009833EA /* maestro_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maestro_image.png; path = Resources/maestro_image.png; sourceTree = "<group>"; };
@@ -314,6 +317,8 @@
 				CFAB7D2C185375C30013D538 /* MPBCustomStyleSignatureViewController.m */,
 				CFAB7D2D185375C30013D538 /* MPBDefaultStyleSignatureViewController.h */,
 				CFAB7D2E185375C30013D538 /* MPBDefaultStyleSignatureViewController.m */,
+				2D079CA61A7A235700157E8E /* MPBMposUIStyleSignatureViewController.h */,
+				2D079CA71A7A235700157E8E /* MPBMposUIStyleSignatureViewController.m */,
 				2DA694001A765958009833EA /* MPBSignatureViewControllerConfiguration.h */,
 				2DA694011A765958009833EA /* MPBSignatureViewControllerConfiguration.m */,
 				2DA694481A78EF17009833EA /* mpos.blocks.signature.h */,
@@ -443,6 +448,7 @@
 				2DA694631A793357009833EA /* MPBSignatureViewControllerPrivate.m in Sources */,
 				CF159BEA1823B7C700A797FE /* main.m in Sources */,
 				2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */,
+				2D079CA81A7A235700157E8E /* MPBMposUIStyleSignatureViewController.m in Sources */,
 				2DA694021A765958009833EA /* MPBSignatureViewControllerConfiguration.m in Sources */,
 				CF159BF41823B7C700A797FE /* MPBViewController.m in Sources */,
 				CFAB7D2F185375C30013D538 /* MPBCustomStyleSignatureViewController.m in Sources */,

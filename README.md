@@ -1,6 +1,6 @@
 ## Simple, beautiful payment signatures on iOS
 
-![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/bc411f7f2cb451ebf61736a82ac8034e4388801a/screen3.png"Signature View")
+![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/bc411f7f2cb451ebf61736a82ac8034e4388801a/screen3.png "Signature View")
 
 Works perfectly with the mPOS SDK by [payworks](http://www.payworksmobile.com). Learn how to integrate a card reader in your app at [payworks.mpymnt.com](http://www.payworks.mpymnt.com).
 

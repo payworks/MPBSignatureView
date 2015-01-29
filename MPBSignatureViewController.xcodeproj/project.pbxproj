@@ -53,7 +53,7 @@
 		2D31E04C1A7A62E800482E2D /* MPBSignatureViewControllerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewControllerConfiguration.m; sourceTree = "<group>"; };
 		2D31E04D1A7A62E800482E2D /* MPBSignatureViewControllerPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewControllerPrivate.h; sourceTree = "<group>"; };
 		2D31E04E1A7A62E800482E2D /* MPBSignatureViewControllerPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPBSignatureViewControllerPrivate.m; sourceTree = "<group>"; };
-		2D31E04F1A7A62E800482E2D /* mpos.blocks.signature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpos.blocks.signature.h; sourceTree = "<group>"; };
+		2D31E04F1A7A62E800482E2D /* MPBSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBSignatureViewController.h; sourceTree = "<group>"; };
 		2D31E0571A7A632600482E2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D31E0581A7A632600482E2D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D31E0591A7A632600482E2D /* MPBAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPBAppDelegate.h; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				2D31E04C1A7A62E800482E2D /* MPBSignatureViewControllerConfiguration.m */,
 				2D31E04D1A7A62E800482E2D /* MPBSignatureViewControllerPrivate.h */,
 				2D31E04E1A7A62E800482E2D /* MPBSignatureViewControllerPrivate.m */,
-				2D31E04F1A7A62E800482E2D /* mpos.blocks.signature.h */,
+				2D31E04F1A7A62E800482E2D /* MPBSignatureViewController.h */,
 			);
 			path = MPBSignatureViewController;
 			sourceTree = "<group>";

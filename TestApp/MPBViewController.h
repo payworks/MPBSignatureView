@@ -1,5 +1,5 @@
 /*
- * mPOS SDK Building Blocks: http://www.payworksmobile.com
+ * Payment Signature View: http://www.payworksmobile.com
  *
  * Copyright (c) 2015 payworks GmbH
  *

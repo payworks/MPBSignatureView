@@ -1,5 +1,5 @@
 /*
- * mPOS SDK Building Blocks: http://www.payworksmobile.com
+ * Payment Signature View: http://www.payworksmobile.com
  *
  * Copyright (c) 2015 payworks GmbH
  *
@@ -23,8 +23,8 @@
  *
  */
 
-#ifndef mpos_ios_blocks_signatureview_mpos_blocks_signature_h
-#define mpos_ios_blocks_signatureview_mpos_blocks_signature_h
+#ifndef MPBSignatureViewController_h
+#define MPBSignatureViewController_h
 
 #import "MPBCustomStyleSignatureViewController.h"
 #import "MPBDefaultStyleSignatureViewController.h"

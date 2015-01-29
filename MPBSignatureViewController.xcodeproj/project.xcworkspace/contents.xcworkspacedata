@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:mpos.ios.blocks.signatureview.xcodeproj">
+      location = "self:MPBSignatureViewController.xcodeproj">
    </FileRef>
 </Workspace>

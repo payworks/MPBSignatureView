@@ -6,11 +6,10 @@ Works perfectly with the mPOS SDK by [payworks](http://www.payworksmobile.com). 
 
 ## Install
 
-    pod repo add mpymnt http://pods.mpymnt.com/io.mpymnt.repo.pods.git
-
 In your podfile:
 
-    pod 'mpos.blocks.signature'
+	source http://pods.mpymnt.com/io.mpymnt.repo.pods.git
+    pod 'MPBSignatureViewController'
 
 ## Use
 

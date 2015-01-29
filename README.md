@@ -63,6 +63,9 @@ self.signatureViewController.modalPresentationStyle = UIModalPresentationFormShe
 
 You can also create a custom style in your storyboard:
 
+![storyboard](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/aebcac7eb49056e7da8e6fcd6138c233ed3d1830/screen4.png "Storyboard")
+
+
 1. Create a View Controller in your storyboard.
 2. Enter `MPBCustomStyleSignatureViewController` as Custom Class.
 3. Create the following UI elements in your view controller and wire it with the respective properties:

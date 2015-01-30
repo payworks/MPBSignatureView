@@ -90,7 +90,7 @@
     self.cancelButton.frame = CGRectMake(0, self.view.bounds.size.height - bottomHeight, 200, bottomHeight);
     self.continueButton.frame = CGRectMake(self.view.bounds.size.width - 200, self.view.bounds.size.height - bottomHeight, 200, bottomHeight);
     
-    self.signatureView.frame = CGRectMake(0, 40, self.view.bounds.size.width, self.view.bounds.size.height - bottomHeight - topHeight);
+    self.signatureView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     
     int legalTextSideMargin = 10;
     int legalTextHeight = 20;

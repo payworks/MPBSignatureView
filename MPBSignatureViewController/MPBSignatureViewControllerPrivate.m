@@ -63,7 +63,6 @@ UIImage *MPBimageWithContentsOfResolutionIndependentFile(NSString * path) {
     } else {
         extension = @"";
     }
-    
     NSString* nPath = [[path stringByDeletingLastPathComponent]
                        stringByAppendingPathComponent:[NSString stringWithFormat:extension,
                                                        [[path lastPathComponent] stringByDeletingPathExtension],

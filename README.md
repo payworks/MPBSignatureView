@@ -1,6 +1,6 @@
 ## Simple, beautiful payment signatures on iOS
 
-![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/f2d1753551dff5f67390514f1513bb3b5974b1c1/screen3.png "Signature View")
+![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/bc411f7f2cb451ebf61736a82ac8034e4388801a/screen3.png "Signature View")
 
 Works perfectly with the mPOS SDK by [payworks](http://www.payworksmobile.com). Learn how to integrate a card reader in your app at [payworks.mpymnt.com](http://www.payworks.mpymnt.com).
 
@@ -42,17 +42,17 @@ vc.cancelBlock =^{
 
 * `MPBMposUIStyleSignatureViewController`
 
-![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/f2d1753551dff5f67390514f1513bb3b5974b1c1/screen3.png "Signature View")
+![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/bc411f7f2cb451ebf61736a82ac8034e4388801a/screen3.png "Signature View")
 
 
 * `MPBDefaultStyleSignatureViewController`
 
-![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/f2d1753551dff5f67390514f1513bb3b5974b1c1/screen1.png "Signature View")
+![signature view](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/bc411f7f2cb451ebf61736a82ac8034e4388801a/screen1.png "Signature View")
 
 
 ## Display as a modal on the iPad
 
-![signature view modal](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/aebcac7eb49056e7da8e6fcd6138c233ed3d1830/screen2.png "Signature View Modal")
+![signature view modal](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/bc411f7f2cb451ebf61736a82ac8034e4388801a/screen2.png "Signature View Modal")
 
 ```objectivec
 self.signatureViewController.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -63,7 +63,7 @@ self.signatureViewController.modalPresentationStyle = UIModalPresentationFormShe
 
 You can also create a custom style in your storyboard:
 
-![storyboard](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/aebcac7eb49056e7da8e6fcd6138c233ed3d1830/screen4.png "Storyboard")
+![storyboard](https://bytebucket.org/payworks/mpos.ios.blocks.signatureview/raw/bc411f7f2cb451ebf61736a82ac8034e4388801a/screen4.png "Storyboard")
 
 
 1. Create a View Controller in your storyboard.

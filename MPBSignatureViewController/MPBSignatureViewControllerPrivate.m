@@ -54,24 +54,27 @@ NSString *MPBSignatureViewLocalizedString(NSString *stringToken) {
     }
 }
 
-UIImage *MPBnewWithContentsOfResolutionIndependentFile(NSString * path) {
+UIImage *MPBimageWithContentsOfResolutionIndependentFile(NSString * path) {
+    NSString* extension = @"";
     if ([UIScreen instancesRespondToSelector:@selector(scale)] && (int)[[UIScreen mainScreen] scale] == 2.0) {
-        NSString *path2x = [[path stringByDeletingLastPathComponent]
-                            stringByAppendingPathComponent:[NSString stringWithFormat:@"%@@2x.%@",
-                                                            [[path lastPathComponent] stringByDeletingPathExtension],
-                                                            [path pathExtension]]];
-        
-        if ([[NSFileManager defaultManager] fileExistsAtPath:path2x]) {
-            return [[UIImage alloc] initWithContentsOfFile:path2x];
-        }
+        extension = @"%@@2x.%@";
+    } else if([UIScreen instancesRespondToSelector:@selector(scale)] && (int)[[UIScreen mainScreen] scale] == 3.0) {
+        extension = @"%@@3x.%@";
+    } else {
+        extension = @"";
     }
     
-    return [[UIImage alloc] initWithContentsOfFile:path];
-}
-
-
-UIImage *MPBimageWithContentsOfResolutionIndependentFile(NSString *path) {
-    return MPBnewWithContentsOfResolutionIndependentFile(path);
+    NSString* nPath = [[path stringByDeletingLastPathComponent]
+                       stringByAppendingPathComponent:[NSString stringWithFormat:extension,
+                                                       [[path lastPathComponent] stringByDeletingPathExtension],
+                                                       [path pathExtension]]];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:nPath]) {
+        return [[UIImage alloc] initWithContentsOfFile:nPath];
+    } else {
+        return [[UIImage alloc] initWithContentsOfFile:path];
+        
+    }
 }
 
 UIImage *MPBImageNamed(NSString *imageName) {

@@ -53,3 +53,33 @@ NSString *MPBSignatureViewLocalizedString(NSString *stringToken) {
         return stringToken;
     }
 }
+
+UIImage *MPBnewWithContentsOfResolutionIndependentFile(NSString * path) {
+    if ([UIScreen instancesRespondToSelector:@selector(scale)] && (int)[[UIScreen mainScreen] scale] == 2.0) {
+        NSString *path2x = [[path stringByDeletingLastPathComponent]
+                            stringByAppendingPathComponent:[NSString stringWithFormat:@"%@@2x.%@",
+                                                            [[path lastPathComponent] stringByDeletingPathExtension],
+                                                            [path pathExtension]]];
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:path2x]) {
+            return [[UIImage alloc] initWithContentsOfFile:path2x];
+        }
+    }
+    
+    return [[UIImage alloc] initWithContentsOfFile:path];
+}
+
+
+UIImage *MPBimageWithContentsOfResolutionIndependentFile(NSString *path) {
+    return MPBnewWithContentsOfResolutionIndependentFile(path);
+}
+
+UIImage *MPBImageNamed(NSString *imageName) {
+    if(MPBSignatureViewBundle()) {
+        NSBundle *bundle = MPBSignatureViewBundle();
+        NSString *imagePath = [[bundle resourcePath] stringByAppendingPathComponent:imageName];
+        return MPBimageWithContentsOfResolutionIndependentFile(imagePath);
+    } else {
+        return [UIImage imageNamed:imageName];
+    }
+}

@@ -130,12 +130,12 @@
 - (UIImage*) imageForScheme: (MPBSignatureViewControllerConfigurationScheme) scheme {
     switch (scheme) {
         case MPBSignatureViewControllerConfigurationSchemeMaestro:
-            return [UIImage imageNamed:@"maestro_image.png"];
+            return MPBImageNamed(@"maestro_image.png");
         case MPBSignatureViewControllerConfigurationSchemeMastercard:
-            return [UIImage imageNamed:@"mastercard_image.png"];
+            return MPBImageNamed(@"mastercard_image.png");
         case MPBSignatureViewControllerConfigurationSchemeVisa:
         case MPBSignatureViewControllerConfigurationSchemeVpay:
-            return [UIImage imageNamed:@"visacard_image.png"];
+            return MPBImageNamed(@"visacard_image.png");
         default:
             return nil;
     }

@@ -29,3 +29,4 @@
 
 NSBundle *MPBSignatureViewBundle(void);
 NSString *MPBSignatureViewLocalizedString(NSString *stringToken);
+UIImage *MPBImageNamed(NSString *imageName);

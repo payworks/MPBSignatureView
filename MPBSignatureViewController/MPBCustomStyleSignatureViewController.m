@@ -25,14 +25,13 @@
 
 #import "MPBCustomStyleSignatureViewController.h"
 #import "PPSSignatureView.h"
-#import "MPBSignatureViewControllerPrivate.h"
+
+NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle";
 
 @interface MPBCustomStyleSignatureViewController () <PPSSignatureViewDelegate>
 
 @property (nonatomic, weak) UIView *viewToAdd;
-
 @property (nonatomic, strong) PPSSignatureView* signatureViewInternal;
-
 
 @end
 
@@ -117,11 +116,11 @@
 - (void) setupViews {
     self.merchantNameLabel.text = self.configuration.merchantName;
     self.formattedAmountLabel.text = self.configuration.formattedAmount;
-    self.legalTextLabel.text = [NSString stringWithFormat:MPBSignatureViewLocalizedString(@"MPBSignatureViewSignatureTextFormat"), self.configuration.formattedAmount, self.configuration.merchantName];
+    self.legalTextLabel.text = [NSString stringWithFormat:[self localizedString:@"MPBSignatureViewSignatureTextFormat"], self.configuration.formattedAmount, self.configuration.merchantName];
     self.merchantImageView.image = self.configuration.merchantImage;
-    [self.continueButton  setTitle:MPBSignatureViewLocalizedString(@"MPBSignatureViewContinue") forState:UIControlStateNormal];
-    [self.cancelButton setTitle:MPBSignatureViewLocalizedString(@"MPBSignatureViewCancel") forState:UIControlStateNormal];
-    [self.clearButton setTitle:MPBSignatureViewLocalizedString(@"MPBSignatureViewClear") forState:UIControlStateNormal];
+    [self.continueButton  setTitle:[self localizedString:@"MPBSignatureViewContinue"] forState:UIControlStateNormal];
+    [self.cancelButton setTitle:[self localizedString:@"MPBSignatureViewCancel"] forState:UIControlStateNormal];
+    [self.clearButton setTitle:[self localizedString:@"MPBSignatureViewClear"] forState:UIControlStateNormal];
     [self disableContinueAndClearButtonsAnimated:NO];
     self.schemeImageView.image = [self imageForScheme: self.configuration.scheme];
     self.schemeImageView.contentMode = UIViewContentModeCenter;
@@ -130,12 +129,12 @@
 - (UIImage*) imageForScheme: (MPBSignatureViewControllerConfigurationScheme) scheme {
     switch (scheme) {
         case MPBSignatureViewControllerConfigurationSchemeMaestro:
-            return MPBImageNamed(@"maestro_image.png");
+            return [self imageWithName:@"maestro_image"];
         case MPBSignatureViewControllerConfigurationSchemeMastercard:
-            return MPBImageNamed(@"mastercard_image.png");
+            return [self imageWithName:@"mastercard_image"];
         case MPBSignatureViewControllerConfigurationSchemeVisa:
         case MPBSignatureViewControllerConfigurationSchemeVpay:
-            return MPBImageNamed(@"visacard_image.png");
+            return [self imageWithName:@"visacard_image"];
         default:
             return nil;
     }
@@ -195,5 +194,88 @@
 }
 
 
+- (NSBundle *)resourceBundle
+{
+    static NSBundle *MPSignatureViewBundle = nil;
+    static dispatch_once_t MPSignatureViewBundleOnce;
+    dispatch_once(&MPSignatureViewBundleOnce, ^{
+        NSString *mainBundleResourcePath = [[NSBundle mainBundle] resourcePath];
+        NSString *signatureViewBundlePath = [mainBundleResourcePath stringByAppendingPathComponent:MPBSignatureViewBundleName];
+        MPSignatureViewBundle = [NSBundle bundleWithPath:signatureViewBundlePath];
+        NSLog(@"bundle path: %@", signatureViewBundlePath);
+    });
+    return MPSignatureViewBundle;
+    
+}
+
+- (NSString *)localizedString:(NSString *)token
+{
+    if (!token) return @"";
+    
+    //here we check for three different occurances where it can be found
+    
+    //first up is the app localization
+    NSString *appSpecificLocalizationString = NSLocalizedString(token, @"");
+    if (![token isEqualToString:appSpecificLocalizationString])
+    {
+        return appSpecificLocalizationString;
+    }
+    
+    //second is the app localization with specific table
+    NSString *appSpecificLocalizationStringFromTable = NSLocalizedStringFromTable(token, @"MPBSignatureView", @"");
+    if (![token isEqualToString:appSpecificLocalizationStringFromTable])
+    {
+        return appSpecificLocalizationStringFromTable;
+    }
+    
+    //third time is the charm, looking in our resource bundle
+    if ([self resourceBundle])
+    {
+        NSString *bundleSpecificLocalizationString = NSLocalizedStringFromTableInBundle(token, @"MPBSignatureView", [self resourceBundle], @"");
+        if (![token isEqualToString:bundleSpecificLocalizationString])
+        {
+            return bundleSpecificLocalizationString;
+        }
+    }
+    
+    //and as a fallback, we just return the token itself
+    NSLog(@"could not find any localization files. please check that you added the resource bundle and/or your own localizations");
+    return token;
+}
+
+- (UIImage *)imageWithName:(NSString *)name
+{
+    if (!name) return nil;
+    
+    //here we check for two different occurances where it can be found
+    
+    //first up is the local bundle
+    NSString *localImagePath = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];
+    UIImage *localImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:localImagePath] scale:[[UIScreen mainScreen] scale]];
+    if (localImage)
+    {
+        return localImage;
+    }
+    
+    //second is our resource bundle
+    if ([self resourceBundle])
+    {
+        //if its compressed into a bundle tiff
+        NSString *bundleImagePath = [[self resourceBundle] pathForResource:name ofType:@"tiff"];
+        if (!bundleImagePath)
+        {
+            //or try the default png names
+            bundleImagePath = [[self resourceBundle] pathForResource:name ofType:@"png"];
+        }
+        UIImage *bundleImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:bundleImagePath] scale:[[UIScreen mainScreen] scale]];
+        if (bundleImage)
+        {
+            return bundleImage;
+        }
+    }
+    
+    NSLog(@"could not find the resource image. please check that you added the resource bundle and/or your own images");
+    return nil;
+}
 
 @end

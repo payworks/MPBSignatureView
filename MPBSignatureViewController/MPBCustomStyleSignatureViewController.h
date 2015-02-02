@@ -59,6 +59,9 @@ typedef void (^MPBCustomStyleSignatureViewControllerCancel)();
 - (void) disableContinueAndClearButtonsAnimated: (BOOL) animated;
 - (void) enableContinueAndClearButtons;
 
+- (NSBundle *)resourceBundle;
+- (NSString *)localizedString:(NSString *)token;
+- (UIImage *)imageWithName:(NSString *)name;
 
 @end
 

@@ -27,7 +27,7 @@
 
 @interface MPBMposUIStyleSignatureViewController()
 
-@property (nonatomic, strong) UIView* signatureLineView;
+@property (nonatomic, strong) UIView *signatureLineView;
 
 @end
 

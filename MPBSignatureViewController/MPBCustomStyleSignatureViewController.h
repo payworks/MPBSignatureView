@@ -45,19 +45,19 @@ typedef void (^MPBCustomStyleSignatureViewControllerCancel)();
 
 @property (nonatomic, strong) IBOutlet UILabel *legalTextLabel;
 
-@property (nonatomic, strong) IBOutlet UIButton* continueButton;
+@property (nonatomic, strong) IBOutlet UIButton *continueButton;
 @property (nonatomic, strong) IBOutlet UIButton *cancelButton;
 @property (nonatomic, strong) IBOutlet UIButton *clearButton;
 
-- (instancetype)initWithConfiguration:(MPBSignatureViewControllerConfiguration*)configuration;
-+ (instancetype)controllerWithConfiguration:(MPBSignatureViewControllerConfiguration*)configuration;
+- (instancetype)initWithConfiguration:(MPBSignatureViewControllerConfiguration *)configuration;
++ (instancetype)controllerWithConfiguration:(MPBSignatureViewControllerConfiguration *)configuration;
 
 - (void)continueWithSignature;
 - (void)cancelSignature;
 - (void)clearSignature;
 
-- (void) disableContinueAndClearButtonsAnimated: (BOOL) animated;
-- (void) enableContinueAndClearButtons;
+- (void)disableContinueAndClearButtonsAnimated:(BOOL)animated;
+- (void)enableContinueAndClearButtons;
 
 - (NSBundle *)resourceBundle;
 - (NSString *)localizedString:(NSString *)token;

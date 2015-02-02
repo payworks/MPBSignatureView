@@ -31,7 +31,7 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle"
 @interface MPBCustomStyleSignatureViewController () <PPSSignatureViewDelegate>
 
 @property (nonatomic, weak) UIView *viewToAdd;
-@property (nonatomic, strong) PPSSignatureView* signatureViewInternal;
+@property (nonatomic, strong) PPSSignatureView *signatureViewInternal;
 
 @end
 
@@ -44,14 +44,14 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle"
     return self;
 }
 
-- (instancetype)initWithConfiguration:(MPBSignatureViewControllerConfiguration*)configuration {
+- (instancetype)initWithConfiguration:(MPBSignatureViewControllerConfiguration *)configuration {
     self = [super init];
     self.configuration = configuration;
     return self;
 }
 
-+ (instancetype)controllerWithConfiguration:(MPBSignatureViewControllerConfiguration*)configuration {
-    id controller = [[self alloc] initWithConfiguration: configuration];
++ (instancetype)controllerWithConfiguration:(MPBSignatureViewControllerConfiguration *)configuration {
+    id controller = [[self alloc] initWithConfiguration:configuration];
     return controller;
 }
 
@@ -194,8 +194,7 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle"
 }
 
 
-- (NSBundle *)resourceBundle
-{
+- (NSBundle *)resourceBundle{
     static NSBundle *MPSignatureViewBundle = nil;
     static dispatch_once_t MPSignatureViewBundleOnce;
     dispatch_once(&MPSignatureViewBundleOnce, ^{
@@ -205,11 +204,9 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle"
         NSLog(@"bundle path: %@", signatureViewBundlePath);
     });
     return MPSignatureViewBundle;
-    
 }
 
-- (NSString *)localizedString:(NSString *)token
-{
+- (NSString *)localizedString:(NSString *)token{
     if (!token) return @"";
     
     //here we check for three different occurances where it can be found
@@ -243,8 +240,7 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle"
     return token;
 }
 
-- (UIImage *)imageWithName:(NSString *)name
-{
+- (UIImage *)imageWithName:(NSString *)name{
     if (!name) return nil;
     
     //here we check for two different occurances where it can be found

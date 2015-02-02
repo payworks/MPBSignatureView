@@ -29,13 +29,13 @@
 @interface MPBDefaultStyleSignatureViewController : MPBCustomStyleSignatureViewController
 
 // Customizable properties
-@property (nonatomic, strong) UIColor* buttonColor;
-@property (nonatomic, strong) UIColor* colorLine;
-@property (nonatomic, strong) UIColor* colorBackground;
+@property (nonatomic, strong) UIColor *buttonColor;
+@property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic, strong) UIColor *backgroundColor;
 
-@property UIFont* largeFont;
-@property UIFont* mediumFont;
-@property UIFont* smallFont;
+@property (nonatomic, strong) UIFont *largeFont;
+@property (nonatomic, strong) UIFont *mediumFont;
+@property (nonatomic, strong) UIFont *smallFont;
 
 
 @end

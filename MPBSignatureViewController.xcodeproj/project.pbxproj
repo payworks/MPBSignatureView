@@ -85,8 +85,6 @@
 		2DD972A51A6D64A6009F1107 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		2DFF3EF61A6D2DB100C7B3A5 /* PPSSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PPSSignatureView.h; path = External/PPSSignatureView/PPSSignatureView.h; sourceTree = "<group>"; };
 		2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPSSignatureView.m; path = External/PPSSignatureView/PPSSignatureView.m; sourceTree = "<group>"; };
-		55AEE256D8722D5BB29A88AE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		664CD16262ED00CC243D2947 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF159BDA1823B7C700A797FE /* Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF159BDD1823B7C700A797FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF159BDF1823B7C700A797FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,15 +228,6 @@
 			name = External;
 			sourceTree = "<group>";
 		};
-		9C15569829FBADE02C48582B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				664CD16262ED00CC243D2947 /* Pods.debug.xcconfig */,
-				55AEE256D8722D5BB29A88AE /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		CF159BD11823B7C700A797FE = {
 			isa = PBXGroup;
 			children = (
@@ -248,7 +237,6 @@
 				2D31E0551A7A632600482E2D /* TestApp */,
 				CF159BDC1823B7C700A797FE /* Frameworks */,
 				CF159BDB1823B7C700A797FE /* Products */,
-				9C15569829FBADE02C48582B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};

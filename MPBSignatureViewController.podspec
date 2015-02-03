@@ -12,5 +12,4 @@ Pod::Spec.new do |s|
   s.resource_bundle  = { 'MPBSignatureViewResources' => ['Resources/*.png', 'Resources/*.lproj'] }
   s.requires_arc =  true
   s.frameworks = 'GLKit', 'OpenGLES'
-  s.private_header_files  = 'MPBSignatureViewController/*Private.h'
 end

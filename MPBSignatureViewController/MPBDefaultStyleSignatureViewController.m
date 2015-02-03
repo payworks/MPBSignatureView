@@ -28,15 +28,13 @@
 
 @interface MPBDefaultStyleSignatureViewController ()
 
-@property CGRect signatureFrame;
+@property (nonatomic, assign) CGRect signatureFrame;
+@property (nonatomic, assign) CGRect bounds;
 
 // UI Components
-@property (nonatomic, strong) UIView* topBackground;
-@property (nonatomic, strong) UIView* bottomBackground;
-
-@property (nonatomic, strong) UIView* signatureLineView;
-
-@property CGRect bounds;
+@property (nonatomic, strong) UIView *topBackground;
+@property (nonatomic, strong) UIView *bottomBackground;
+@property (nonatomic, strong) UIView *signatureLineView;
 
 @end
 
@@ -48,8 +46,8 @@
 
 - (void) setDefaults {
     self.buttonColor = [UIColor colorWithRed:21.0f/255.0f green:126.0f/255.0f blue:251.0f/255.0f alpha:1.0f];
-    self.colorLine = [UIColor colorWithRed:142.0f/255.0f green:142.0f/255.0f blue:147.0f/255.0f alpha:1.0];
-    self.colorBackground = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0f];
+    self.lineColor = [UIColor colorWithRed:142.0f/255.0f green:142.0f/255.0f blue:147.0f/255.0f alpha:1.0];
+    self.backgroundColor = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0f];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -110,18 +108,18 @@
 
 - (void)setupBackgroundElements {
     self.signatureLineView = [[UIView alloc] init];
-    self.signatureLineView.backgroundColor = self.colorLine;
+    self.signatureLineView.backgroundColor = self.lineColor;
     
     self.topBackground = [[UIView alloc]init ];
     self.bottomBackground = [[UIView alloc]init];
     
-    self.topBackground.backgroundColor = self.colorBackground;
+    self.topBackground.backgroundColor = self.backgroundColor;
     [self.topBackground.layer setBorderWidth:0.5f];
-    [self.topBackground.layer setBorderColor:self.colorLine.CGColor];
+    [self.topBackground.layer setBorderColor:self.lineColor.CGColor];
     
-    self.bottomBackground.backgroundColor = self.colorBackground;
+    self.bottomBackground.backgroundColor = self.backgroundColor;
     [self.bottomBackground.layer setBorderWidth:0.7f];
-    [self.bottomBackground.layer setBorderColor:self.colorLine.CGColor];
+    [self.bottomBackground.layer setBorderColor:self.lineColor.CGColor];
     
     [self.view addSubview:self.topBackground];
     [self.view addSubview:self.bottomBackground];
@@ -149,7 +147,7 @@
 - (void)setupSignatureTextLabel {
     self.legalTextLabel = [[UILabel alloc]init ];
     [self.legalTextLabel setFont:self.smallFont];
-    self.legalTextLabel.textColor = self.colorLine;
+    self.legalTextLabel.textColor = self.lineColor;
     self.legalTextLabel.numberOfLines = 1;
     self.legalTextLabel.textAlignment = NSTextAlignmentCenter;
     self.legalTextLabel.backgroundColor = [UIColor clearColor];

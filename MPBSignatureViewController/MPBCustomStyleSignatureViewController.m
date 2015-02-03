@@ -250,6 +250,11 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
         if (bundleImage != nil) {
             return bundleImage;
         }
+        
+        bundleImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@.bundle/%@", MPBSignatureViewBundleName, name]];
+        if (bundleImage != nil) {
+            return bundleImage;
+        }
     }
     
     NSLog(@"could not find the resource image. please check that you added the resource bundle.");

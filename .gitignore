@@ -1,0 +1,39 @@
+# system related
+.DS_Store
+.ds_store
+Thumbs.db
+thumbs.db
+
+
+#ios related
+*.swp
+*.lock
+profile
+*~.nib
+DerivedData/
+build/
+Pods/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+
+xcuserdata
+!xcshareddata
+!xcschemes
+*.moved-aside
+*.xccheckout
+
+#build folders
+/packaged*
+
+#cocoapods
+/Pods
+#Podfile.lock
+
+#AppCode settings
+.idea

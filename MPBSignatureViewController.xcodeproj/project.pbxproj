@@ -15,7 +15,6 @@
 		2D31E0631A7A632600482E2D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D31E0581A7A632600482E2D /* Images.xcassets */; };
 		2D31E0641A7A632600482E2D /* MPBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D31E05A1A7A632600482E2D /* MPBAppDelegate.m */; };
 		2D31E0651A7A632600482E2D /* MPBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D31E05C1A7A632600482E2D /* MPBViewController.m */; };
-		2D31E0661A7A632600482E2D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D31E05D1A7A632600482E2D /* InfoPlist.strings */; };
 		2D31E0671A7A632600482E2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D31E05F1A7A632600482E2D /* main.m */; };
 		2D31E06B1A7A658A00482E2D /* TestApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D31E0691A7A658A00482E2D /* TestApp-Info.plist */; };
 		2DD972A01A6D645C009F1107 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD9729F1A6D645C009F1107 /* OpenGLES.framework */; };
@@ -379,7 +378,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4AA224F1A80086B00AEC09F /* MPBSignatureViewResources.bundle in Resources */,
-				2D31E0661A7A632600482E2D /* InfoPlist.strings in Resources */,
 				2D31E06B1A7A658A00482E2D /* TestApp-Info.plist in Resources */,
 				2D31E0631A7A632600482E2D /* Images.xcassets in Resources */,
 				2D31E0621A7A632600482E2D /* Main.storyboard in Resources */,

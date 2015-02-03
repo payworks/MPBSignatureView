@@ -26,7 +26,7 @@
 #import "MPBCustomStyleSignatureViewController.h"
 #import "PPSSignatureView.h"
 
-NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle";
+NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
 
 @interface MPBCustomStyleSignatureViewController () <PPSSignatureViewDelegate>
 
@@ -199,7 +199,7 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle"
     static dispatch_once_t MPSignatureViewBundleOnce;
     dispatch_once(&MPSignatureViewBundleOnce, ^{
         NSString *mainBundleResourcePath = [[NSBundle mainBundle] resourcePath];
-        NSString *signatureViewBundlePath = [mainBundleResourcePath stringByAppendingPathComponent:MPBSignatureViewBundleName];
+        NSString *signatureViewBundlePath = [mainBundleResourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.bundle", MPBSignatureViewBundleName]];
         MPSignatureViewBundle = [NSBundle bundleWithPath:signatureViewBundlePath];
         NSLog(@"bundle path: %@", signatureViewBundlePath);
     });
@@ -243,34 +243,16 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources.bundle"
 - (UIImage *)imageWithName:(NSString *)name{
     if (!name) return nil;
     
-    //here we check for two different occurances where it can be found
-    
-    //first up is the local bundle
-    NSString *localImagePath = [[NSBundle mainBundle] pathForResource:name ofType:@"png"];
-    UIImage *localImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:localImagePath] scale:[[UIScreen mainScreen] scale]];
-    if (localImage)
-    {
-        return localImage;
-    }
-    
-    //second is our resource bundle
     if ([self resourceBundle])
     {
-        //if its compressed into a bundle tiff
         NSString *bundleImagePath = [[self resourceBundle] pathForResource:name ofType:@"tiff"];
-        if (!bundleImagePath)
-        {
-            //or try the default png names
-            bundleImagePath = [[self resourceBundle] pathForResource:name ofType:@"png"];
-        }
         UIImage *bundleImage = [UIImage imageWithData:[NSData dataWithContentsOfFile:bundleImagePath] scale:[[UIScreen mainScreen] scale]];
-        if (bundleImage)
-        {
+        if (bundleImage != nil) {
             return bundleImage;
         }
     }
     
-    NSLog(@"could not find the resource image. please check that you added the resource bundle and/or your own images");
+    NSLog(@"could not find the resource image. please check that you added the resource bundle.");
     return nil;
 }
 

@@ -8,8 +8,8 @@ Works perfectly with the mPOS SDK by [payworks](http://www.payworksmobile.com). 
 
 In your podfile:
 
-	source 'http://pods.mpymnt.com/io.mpymnt.repo.pods.git'
-    pod 'MPBSignatureViewController'
+	source 'https://bitbucket.org/mpymnt/io.mpymnt.repo.pods.git'
+	pod 'MPBSignatureViewController'
 
 ## Use
 

@@ -2,3 +2,4 @@
 "MPBSignatureViewSignatureTextFormat" = "Hiermee machtig ik de betaling van %@ aan %@.";
 "MPBSignatureViewClear" = "Nieuwe handtekening";
 "MPBSignatureViewContinue" = "Verder";
+"MPBSignatureViewSignatureTextFormatWithoutMerchant" = "Hiermee machtig ik de betaling van %@.";

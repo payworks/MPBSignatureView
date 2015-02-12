@@ -2,3 +2,4 @@
 "MPBSignatureViewSignatureTextFormat" = "I agree to pay the amount of %@ to %@.";
 "MPBSignatureViewClear" = "New signature";
 "MPBSignatureViewContinue" = "Continue";
+"MPBSignatureViewSignatureTextFormatWithoutMerchant" = "I agree to pay the amount of %@.";

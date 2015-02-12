@@ -27,6 +27,8 @@
 
 @implementation MPBSignatureViewControllerConfiguration
 
+
+
 - (instancetype)initWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount {
     self = [self init];
     if (self) {
@@ -34,6 +36,14 @@
         self.formattedAmount = formattedAmount;
     }
     return self;
+}
+
+- (instancetype)initWithFormattedAmount:(NSString*) formattedAmount {
+    return [self initWithMerchantName:nil formattedAmount:formattedAmount];
+}
+
++ (instancetype) configurationWithFormattedAmount:(NSString*) formattedAmount {
+    return [[MPBSignatureViewControllerConfiguration alloc] initWithMerchantName:nil formattedAmount:formattedAmount];
 }
 
 + (instancetype)configurationWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount {

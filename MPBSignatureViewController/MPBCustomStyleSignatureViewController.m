@@ -113,10 +113,18 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
     self.signatureView = self.signatureViewInternal;
 }
 
+- (NSString*) legalText {
+    if (self.configuration.merchantName != nil) {
+        return [NSString stringWithFormat:[self localizedString:@"MPBSignatureViewSignatureTextFormat"], self.configuration.formattedAmount, self.configuration.merchantName];
+    } else {
+        return [NSString stringWithFormat:[self localizedString:@"MPBSignatureViewSignatureTextFormatWithoutMerchant"], self.configuration.formattedAmount];
+    }
+}
+
 - (void) setupViews {
     self.merchantNameLabel.text = self.configuration.merchantName;
     self.formattedAmountLabel.text = self.configuration.formattedAmount;
-    self.legalTextLabel.text = [NSString stringWithFormat:[self localizedString:@"MPBSignatureViewSignatureTextFormat"], self.configuration.formattedAmount, self.configuration.merchantName];
+    self.legalTextLabel.text = [self legalText];
     self.merchantImageView.image = self.configuration.merchantImage;
     [self.continueButton  setTitle:[self localizedString:@"MPBSignatureViewContinue"] forState:UIControlStateNormal];
     [self.cancelButton setTitle:[self localizedString:@"MPBSignatureViewCancel"] forState:UIControlStateNormal];

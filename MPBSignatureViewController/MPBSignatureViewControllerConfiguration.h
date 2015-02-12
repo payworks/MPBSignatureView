@@ -40,8 +40,10 @@ typedef NS_ENUM(int, MPBSignatureViewControllerConfigurationScheme) {
 @property (nonatomic, strong) UIImage *merchantImage;
 @property (nonatomic, assign) MPBSignatureViewControllerConfigurationScheme scheme;
 
+- (instancetype)initWithFormattedAmount:(NSString*) formattedAmount;
 - (instancetype)initWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount;
 + (instancetype)configurationWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount;
++ (instancetype) configurationWithFormattedAmount:(NSString*) formattedAmount;
 
 
 @end

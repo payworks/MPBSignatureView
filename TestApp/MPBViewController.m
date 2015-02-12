@@ -85,7 +85,7 @@
 - (void)showModal:(UIModalPresentationStyle) style style:(MPBCustomStyleSignatureViewController*) controller
 {
     
-    MPBCustomStyleSignatureViewController* signatureViewController = [controller initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Antiques + Valuables GmbH" formattedAmount:@"421.99 €"]];
+    MPBCustomStyleSignatureViewController* signatureViewController = [controller initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithFormattedAmount:@"421.99 €"]];
     signatureViewController.modalPresentationStyle = style;
     signatureViewController.preferredContentSize = CGSizeMake(800, 500);
     

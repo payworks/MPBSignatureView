@@ -43,14 +43,27 @@
     self.signatureView.backgroundColor = [UIColor clearColor];
 
     self.cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.cancelButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 16, 16, 0)];
+    [self.cancelButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];
+    [self.cancelButton setContentVerticalAlignment:UIControlContentVerticalAlignmentBottom];
+
     [self.view addSubview:self.cancelButton];
     self.continueButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.continueButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.continueButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+    [self.continueButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    [self.continueButton setContentVerticalAlignment:UIControlContentVerticalAlignmentBottom];
+    [self.continueButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 16, 16)];
+
     [self.view addSubview:self.continueButton];
     self.clearButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [self.clearButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
     [self.clearButton setContentVerticalAlignment:UIControlContentVerticalAlignmentTop];
     self.clearButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
     [self.clearButton setTitleEdgeInsets:UIEdgeInsetsMake(8.0f, 0.0f, 0.0f, 15.0f)];
+    [self.clearButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.clearButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
 
     
     self.schemeImageView = [[UIImageView alloc] init];

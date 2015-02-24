@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'MPBSignatureViewController'
-  s.version  = '1.4.7'
-  s.platform = :ios, '8.0'
+  s.version  = '1.4.8'
+  s.platform = :ios, '7.0'
   s.license  = {:type => 'MIT'}
   s.summary  = 'Signature Field'
   s.homepage = 'http://www.payworksmobile.com'

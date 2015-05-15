@@ -17,6 +17,7 @@
 		2D31E0651A7A632600482E2D /* MPBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D31E05C1A7A632600482E2D /* MPBViewController.m */; };
 		2D31E0671A7A632600482E2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D31E05F1A7A632600482E2D /* main.m */; };
 		2D31E06B1A7A658A00482E2D /* TestApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D31E0691A7A658A00482E2D /* TestApp-Info.plist */; };
+		2D4F53DB1B05FC2B00993CDA /* MPBSignatureView.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D4F53D91B05FC2B00993CDA /* MPBSignatureView.strings */; };
 		2DD972A01A6D645C009F1107 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD9729F1A6D645C009F1107 /* OpenGLES.framework */; };
 		2DD972A61A6D64A6009F1107 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD972A51A6D64A6009F1107 /* GLKit.framework */; };
 		2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */; };
@@ -71,6 +72,7 @@
 		2D31E05F1A7A632600482E2D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2D31E0691A7A658A00482E2D /* TestApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TestApp-Info.plist"; sourceTree = "<group>"; };
 		2D31E06A1A7A658A00482E2D /* TestApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestApp-Prefix.pch"; sourceTree = "<group>"; };
+		2D4F53DA1B05FC2B00993CDA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = MPBSignatureView.strings; sourceTree = "<group>"; };
 		2DA694041A76A9E0009833EA /* maestro_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = maestro_image.png; path = Resources/maestro_image.png; sourceTree = "<group>"; };
 		2DA694051A76A9E0009833EA /* mastercard_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mastercard_image.png; path = Resources/mastercard_image.png; sourceTree = "<group>"; };
 		2DA694061A76A9E0009833EA /* visacard_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = visacard_image.png; path = Resources/visacard_image.png; sourceTree = "<group>"; };
@@ -157,6 +159,15 @@
 			path = TestApp;
 			sourceTree = "<group>";
 		};
+		2D4F53D81B05FC2B00993CDA /* es.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				2D4F53D91B05FC2B00993CDA /* MPBSignatureView.strings */,
+			);
+			name = es.lproj;
+			path = Resources/es.lproj;
+			sourceTree = "<group>";
+		};
 		2DA694031A76A9C8009833EA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +177,7 @@
 				2DA694521A78EFE8009833EA /* fr.lproj */,
 				2DA694551A78EFE8009833EA /* it.lproj */,
 				2DA694581A78EFE8009833EA /* nl.lproj */,
+				2D4F53D81B05FC2B00993CDA /* es.lproj */,
 				2DA694041A76A9E0009833EA /* maestro_image.png */,
 				2DA6940C1A76AAE0009833EA /* maestro_image@2x.png */,
 				2DA694101A76AB2F009833EA /* maestro_image@3x.png */,
@@ -400,6 +412,7 @@
 				F4AA22471A80084200AEC09F /* mastercard_image.png in Resources */,
 				F4AA22481A80084200AEC09F /* mastercard_image@2x.png in Resources */,
 				F4AA22491A80084200AEC09F /* mastercard_image@3x.png in Resources */,
+				2D4F53DB1B05FC2B00993CDA /* MPBSignatureView.strings in Resources */,
 				F4AA224A1A80084200AEC09F /* visacard_image.png in Resources */,
 				F4AA224B1A80084200AEC09F /* visacard_image@2x.png in Resources */,
 				F4AA224C1A80084200AEC09F /* visacard_image@3x.png in Resources */,
@@ -456,6 +469,14 @@
 				2D31E05E1A7A632600482E2D /* es */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2D4F53D91B05FC2B00993CDA /* MPBSignatureView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D4F53DA1B05FC2B00993CDA /* es */,
+			);
+			name = MPBSignatureView.strings;
 			sourceTree = "<group>";
 		};
 		2DA694641A79391C009833EA /* MPBSignatureView.strings */ = {

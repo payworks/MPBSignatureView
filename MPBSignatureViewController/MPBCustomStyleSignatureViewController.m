@@ -193,12 +193,31 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
     return [self.signatureViewInternal signatureImage];
 }
 
-- (BOOL)shouldAutorotate {
-    return YES;
+- (BOOL) shouldAutorotate {
+    // we're autorotating only if the app supports landscape mode
+    // else we'd get into trouble because of an exception that says 'Don't set autorotate YES if the view controller does not share orientation with the app'
+    NSArray *supportedOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UISupportedInterfaceOrientations"];
+    if ([supportedOrientations containsObject:@"UIInterfaceOrientationLandscapeLeft"] || [supportedOrientations containsObject:@"UIInterfaceOrientationLandscapeRight"]) {
+        return YES;
+    } else {
+        return NO;
+        
+    }
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskLandscape;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    NSArray *supportedOrientations = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UISupportedInterfaceOrientations"];
+    // in the special case that the app runs in landscape already, we don't want to change the orientation
+    // and force the user to flip the phone.
+    if (([supportedOrientations containsObject:@"UIInterfaceOrientationLandscapeLeft"] || [supportedOrientations containsObject:@"UIInterfaceOrientationLandscapeRight"]) && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return [UIApplication sharedApplication].statusBarOrientation; // current orientation
+    } else {
+        return UIInterfaceOrientationLandscapeLeft;
+    }
 }
 
 

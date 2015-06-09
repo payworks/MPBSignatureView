@@ -29,7 +29,9 @@ typedef NS_ENUM(int, MPBSignatureViewControllerConfigurationScheme) {
     MPBSignatureViewControllerConfigurationSchemeVisa = 0,
     MPBSignatureViewControllerConfigurationSchemeVpay,
     MPBSignatureViewControllerConfigurationSchemeMastercard,
-    MPBSignatureViewControllerConfigurationSchemeMaestro
+    MPBSignatureViewControllerConfigurationSchemeMaestro,
+    MPBSignatureViewControllerConfigurationSchemeAmex,
+    MPBSignatureViewControllerConfigurationSchemeNone
 };
 
 @interface MPBSignatureViewControllerConfiguration : NSObject

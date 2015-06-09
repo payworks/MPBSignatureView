@@ -69,7 +69,7 @@
 - (void) showCustomScreenWithIdentifier:(NSString*) identifier {
     MPBCustomStyleSignatureViewController *vc = (MPBCustomStyleSignatureViewController *)[self.storyboard instantiateViewControllerWithIdentifier:identifier];
     MPBSignatureViewControllerConfiguration* config = [MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Antiques + Valuables GmbH" formattedAmount:@"421.99 €"];
-    config.scheme = MPBSignatureViewControllerConfigurationSchemeMaestro;
+    config.scheme = MPBSignatureViewControllerConfigurationSchemeAmex;
     vc.configuration = config;
     vc.continueBlock = ^(UIImage *signature) {
         [self showImage: signature];
@@ -88,6 +88,7 @@
     MPBCustomStyleSignatureViewController* signatureViewController = [controller initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithFormattedAmount:@"421.99 €"]];
     signatureViewController.modalPresentationStyle = style;
     signatureViewController.preferredContentSize = CGSizeMake(800, 500);
+    signatureViewController.configuration.scheme = MPBSignatureViewControllerConfigurationSchemeAmex;
     
     signatureViewController.continueBlock = ^(UIImage *signature) {
         [self showImage: signature];

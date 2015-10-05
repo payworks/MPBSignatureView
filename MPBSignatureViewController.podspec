@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'MPBSignatureViewController'
-  s.version  = '1.4.10'
+  s.version  = '1.4.12'
   s.platform = :ios, '7.0'
   s.license  = {:type => 'MIT'}
   s.summary  = 'Signature Field'

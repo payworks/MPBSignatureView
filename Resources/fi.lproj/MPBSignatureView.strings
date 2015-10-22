@@ -1,0 +1,5 @@
+"MPBSignatureViewCancel" = "Peruuta";
+"MPBSignatureViewSignatureTextFormat" = "Hyväksyn maksavani summan %@ kauppiaalle %@.";
+"MPBSignatureViewClear" = "Uusi allekirjoitus";
+"MPBSignatureViewContinue" = "Jatka";
+"MPBSignatureViewSignatureTextFormatWithoutMerchant" = "Hyväksyn maksavani summan %@.";

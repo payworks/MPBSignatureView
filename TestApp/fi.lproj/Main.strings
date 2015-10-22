@@ -1,0 +1,48 @@
+
+/* Class = "UIButton"; normalTitle = "predefined Screen"; ObjectID = "0QE-KJ-Aqa"; */
+"0QE-KJ-Aqa.normalTitle" = "predefined Screen";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "1AU-Qr-7Lr"; */
+"1AU-Qr-7Lr.text" = "Amount";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "E3p-bR-2Dq"; */
+"E3p-bR-2Dq.normalTitle" = "Clear";
+
+/* Class = "UIButton"; normalTitle = "Modal"; ObjectID = "MBs-6e-H94"; */
+"MBs-6e-H94.normalTitle" = "Modal";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "O5Y-Kg-Kny"; */
+"O5Y-Kg-Kny.normalTitle" = "Continue";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "R2B-RU-XQY"; */
+"R2B-RU-XQY.normalTitle" = "Clear";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "TeC-fO-FmT"; */
+"TeC-fO-FmT.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "MPBSignatureView Demo"; ObjectID = "UGc-D4-FfD"; */
+"UGc-D4-FfD.text" = "MPBSignatureView Demo";
+
+/* Class = "UIButton"; normalTitle = "Pay"; ObjectID = "YO6-dL-IYB"; */
+"YO6-dL-IYB.normalTitle" = "Pay";
+
+/* Class = "UIButton"; normalTitle = "custom 2"; ObjectID = "ZHB-sa-gLh"; */
+"ZHB-sa-gLh.normalTitle" = "custom 2";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dRR-4p-1qc"; */
+"dRR-4p-1qc.text" = "Label";
+
+/* Class = "UILabel"; text = "Amount"; ObjectID = "f7K-VZ-8R6"; */
+"f7K-VZ-8R6.text" = "Amount";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "i4v-rN-G2e"; */
+"i4v-rN-G2e.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "pay"; ObjectID = "jAu-LR-JOJ"; */
+"jAu-LR-JOJ.normalTitle" = "pay";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "s7B-4r-0NX"; */
+"s7B-4r-0NX.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "custom 1"; ObjectID = "zer-IN-pSq"; */
+"zer-IN-pSq.normalTitle" = "custom 1";

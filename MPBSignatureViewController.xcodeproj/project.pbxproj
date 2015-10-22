@@ -23,6 +23,7 @@
 		2DD1FA031B2723CE00990483 /* amex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD1FA011B2723CE00990483 /* amex@2x.png */; };
 		2DD972A01A6D645C009F1107 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD9729F1A6D645C009F1107 /* OpenGLES.framework */; };
 		2DD972A61A6D64A6009F1107 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD972A51A6D64A6009F1107 /* GLKit.framework */; };
+		2DE5B67E1BD92F29002162EC /* MPBSignatureView.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DE5B67C1BD92F29002162EC /* MPBSignatureView.strings */; };
 		2DFF3EF81A6D2DD000C7B3A5 /* PPSSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */; };
 		CF159BDE1823B7C700A797FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF159BDD1823B7C700A797FE /* Foundation.framework */; };
 		CF159BE01823B7C700A797FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF159BDF1823B7C700A797FE /* CoreGraphics.framework */; };
@@ -98,6 +99,8 @@
 		2DD972A11A6D6466009F1107 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		2DD972A31A6D6479009F1107 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2DD972A51A6D64A6009F1107 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		2DE5B67A1BD92E7B002162EC /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Main.strings; sourceTree = "<group>"; };
+		2DE5B67D1BD92F29002162EC /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = MPBSignatureView.strings; sourceTree = "<group>"; };
 		2DFF3EF61A6D2DB100C7B3A5 /* PPSSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PPSSignatureView.h; path = External/PPSSignatureView/PPSSignatureView.h; sourceTree = "<group>"; };
 		2DFF3EF71A6D2DD000C7B3A5 /* PPSSignatureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPSSignatureView.m; path = External/PPSSignatureView/PPSSignatureView.m; sourceTree = "<group>"; };
 		CF159BDA1823B7C700A797FE /* Test App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +185,7 @@
 				2DA6944F1A78EFE8009833EA /* en.lproj */,
 				2DA694521A78EFE8009833EA /* fr.lproj */,
 				2DA694551A78EFE8009833EA /* it.lproj */,
+				2DE5B67B1BD92F29002162EC /* fi.lproj */,
 				2DA694581A78EFE8009833EA /* nl.lproj */,
 				2D4F53D81B05FC2B00993CDA /* es.lproj */,
 				2DA694041A76A9E0009833EA /* maestro_image.png */,
@@ -252,6 +256,15 @@
 			);
 			name = nl.lproj;
 			path = Resources/nl.lproj;
+			sourceTree = "<group>";
+		};
+		2DE5B67B1BD92F29002162EC /* fi.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				2DE5B67C1BD92F29002162EC /* MPBSignatureView.strings */,
+			);
+			name = fi.lproj;
+			path = Resources/fi.lproj;
 			sourceTree = "<group>";
 		};
 		2DFF3EF21A6D2C8B00C7B3A5 /* External */ = {
@@ -384,6 +397,7 @@
 				nl,
 				it,
 				es,
+				fi,
 			);
 			mainGroup = CF159BD11823B7C700A797FE;
 			productRefGroup = CF159BDB1823B7C700A797FE /* Products */;
@@ -424,6 +438,7 @@
 				F4AA22461A80084200AEC09F /* maestro_image@3x.png in Resources */,
 				F4AA22471A80084200AEC09F /* mastercard_image.png in Resources */,
 				F4AA22481A80084200AEC09F /* mastercard_image@2x.png in Resources */,
+				2DE5B67E1BD92F29002162EC /* MPBSignatureView.strings in Resources */,
 				F4AA22491A80084200AEC09F /* mastercard_image@3x.png in Resources */,
 				2DD1FA031B2723CE00990483 /* amex@2x.png in Resources */,
 				2D4F53DB1B05FC2B00993CDA /* MPBSignatureView.strings in Resources */,
@@ -474,6 +489,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2D31E0571A7A632600482E2D /* Base */,
+				2DE5B67A1BD92E7B002162EC /* fi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -538,6 +554,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				2DA694741A79393F009833EA /* nl */,
+			);
+			name = MPBSignatureView.strings;
+			sourceTree = "<group>";
+		};
+		2DE5B67C1BD92F29002162EC /* MPBSignatureView.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2DE5B67D1BD92F29002162EC /* fi */,
 			);
 			name = MPBSignatureView.strings;
 			sourceTree = "<group>";

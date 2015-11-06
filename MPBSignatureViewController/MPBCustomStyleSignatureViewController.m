@@ -163,14 +163,10 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
 
 - (void)continueWithSignature {
     self.continueBlock([self signature]);
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
 }
 
 - (void) cancelSignature {
     self.cancelBlock();
-    [self dismissViewControllerAnimated:YES completion:^{
-    }];
 }
 
 - (void) enableContinueAndClearButtons {

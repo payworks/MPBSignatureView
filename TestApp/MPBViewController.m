@@ -73,8 +73,12 @@
     vc.configuration = config;
     vc.continueBlock = ^(UIImage *signature) {
         [self showImage: signature];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
     };
-    vc.cancelBlock =^{};
+    vc.cancelBlock =^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
     
     [self presentViewController:vc animated:YES completion:nil];
 }
@@ -92,9 +96,10 @@
     
     signatureViewController.continueBlock = ^(UIImage *signature) {
         [self showImage: signature];
+        [self dismissViewControllerAnimated:YES completion:nil];
     };
     signatureViewController.cancelBlock = ^ {
-        
+        [self dismissViewControllerAnimated:YES completion:nil];
     };
     
 

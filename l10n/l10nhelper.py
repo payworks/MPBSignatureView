@@ -12,3 +12,5 @@ call(['cp', 'Localizable-it_IT.strings', '../Resources/it.lproj/MPBSignatureView
 call(['cp', 'Localizable-es_ES.strings', '../Resources/es.lproj/MPBSignatureView.strings'])
 call(['cp', 'Localizable-nl_BE.strings', '../Resources/nl.lproj/MPBSignatureView.strings'])
 call(['cp', 'Localizable-fi_FI.strings', '../Resources/fi.lproj/MPBSignatureView.strings'])
+call(['cp', 'Localizable-pt_PT.strings', '../Resources/pt.lproj/MPBSignatureView.strings'])
+call(['cp', 'Localizable-pl_PL.strings', '../Resources/pl.lproj/MPBSignatureView.strings'])

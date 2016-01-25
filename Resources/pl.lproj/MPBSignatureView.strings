@@ -1,0 +1,5 @@
+"MPBSignatureViewCancel" = "Anuluj";
+"MPBSignatureViewSignatureTextFormat" = "Zgadzam się zapłacić kwotę %@ ___ %@.";
+"MPBSignatureViewClear" = "Nowy podpis";
+"MPBSignatureViewContinue" = "Kontynuuj";
+"MPBSignatureViewSignatureTextFormatWithoutMerchant" = "Zgadzam się zapłacić kwotę %@.";

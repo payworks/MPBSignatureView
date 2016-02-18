@@ -145,6 +145,14 @@ NSString *const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
             return [self imageWithName:@"visacard_image"];
         case MPBSignatureViewControllerConfigurationSchemeAmex:
             return [self imageWithName:@"amex"];
+        case MPBSignatureViewControllerConfigurationSchemeDinersClub:
+            return [self imageWithName:@"diners_image"];
+        case MPBSignatureViewControllerConfigurationSchemeDiscover:
+            return [self imageWithName:@"discover_image"];
+        case MPBSignatureViewControllerConfigurationSchemeJCB:
+            return [self imageWithName:@"jcb_image"];
+        case MPBSignatureViewControllerConfigurationSchemeUnionPay:
+            return [self imageWithName:@"unionpay_image"];
         default:
             return nil;
     }

@@ -1,7 +1,7 @@
 /*
- * Payment Signature View: http://www.payworksmobile.com
+ * Payment Signature View: http://www.payworks.com
  *
- * Copyright (c) 2015 payworks GmbH
+ * Copyright (c) 2015 Payworks GmbH
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal

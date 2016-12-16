@@ -25,29 +25,129 @@
 
 #import "MPBSignatureViewControllerConfiguration.h"
 
+NSString * const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
+
 @implementation MPBSignatureViewControllerConfiguration
 
+- (instancetype)initWithFormattedAmount:(NSString *)formattedAmount {
 
-
-- (instancetype)initWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount {
     self = [self init];
-    if (self) {
-        self.merchantName = merchantName;
-        self.formattedAmount = formattedAmount;
+
+    if (!self) {
+        return nil;
     }
+
+    self.formattedAmount = formattedAmount;
+    self.legalText = [NSString stringWithFormat:[self localizedString:@"MPBSignatureViewSignatureTextFormat"], self.formattedAmount];
+    self.clearButtonTitle = @"X";
+    self.cancelButtonTitle = [self localizedString:@"MPBSignatureViewCancel"];
+    self.continueButtonTitle = [self localizedString:@"MPBSignatureViewContinue"];
+
     return self;
 }
 
-- (instancetype)initWithFormattedAmount:(NSString*) formattedAmount {
-    return [self initWithMerchantName:nil formattedAmount:formattedAmount];
+
+- (UIImage*)imageForScheme {
+
+    switch (self.scheme) {
+
+        case MPBSignatureViewControllerConfigurationSchemeMaestro:
+            return [self imageWithName:@"maestro_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeMastercard:
+            return [self imageWithName:@"mastercard_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeVisa:
+        case MPBSignatureViewControllerConfigurationSchemeVpay:
+            return [self imageWithName:@"visacard_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeAmex:
+            return [self imageWithName:@"amex_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeDinersClub:
+            return [self imageWithName:@"diners_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeDiscover:
+            return [self imageWithName:@"discover_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeJCB:
+            return [self imageWithName:@"jcb_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeUnionPay:
+            return [self imageWithName:@"unionpay_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeGhLink:
+             return [self imageWithName:@"ghlink_image"];
+
+        case MPBSignatureViewControllerConfigurationSchemeUnknown:
+            return nil;
+    }
+
+    return nil;
 }
 
-+ (instancetype) configurationWithFormattedAmount:(NSString*) formattedAmount {
-    return [[MPBSignatureViewControllerConfiguration alloc] initWithMerchantName:nil formattedAmount:formattedAmount];
+#pragma mark - Bundle
+
+- (NSBundle *)resourceBundle {
+
+    static NSBundle *MPSignatureViewBundle = nil;
+    static dispatch_once_t MPSignatureViewBundleOnce;
+    dispatch_once(&MPSignatureViewBundleOnce, ^{
+        NSString *mainBundleResourcePath = [[NSBundle mainBundle] resourcePath];
+        NSString *signatureViewBundlePath = [mainBundleResourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.bundle", MPBSignatureViewBundleName]];
+        MPSignatureViewBundle = [NSBundle bundleWithPath:signatureViewBundlePath];
+        NSLog(@"bundle path: %@", signatureViewBundlePath);
+    });
+    return MPSignatureViewBundle;
 }
 
-+ (instancetype)configurationWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount {
-    return [[MPBSignatureViewControllerConfiguration alloc] initWithMerchantName:merchantName formattedAmount:formattedAmount];
+
+- (NSString *)localizedString:(NSString *)token{
+    if (!token) return @"";
+
+    //here we check for three different occurances where it can be found
+
+    //first up is the app localization
+    NSString *appSpecificLocalizationString = NSLocalizedString(token, @"");
+    if (![token isEqualToString:appSpecificLocalizationString]) {
+        return appSpecificLocalizationString;
+    }
+
+    //second is the app localization with specific table
+    NSString *appSpecificLocalizationStringFromTable = NSLocalizedStringFromTable(token, @"MPBSignatureView", @"");
+    if (![token isEqualToString:appSpecificLocalizationStringFromTable]) {
+        return appSpecificLocalizationStringFromTable;
+    }
+
+    //third time is the charm, looking in our resource bundle
+    if ([self resourceBundle]) {
+        NSString *bundleSpecificLocalizationString = NSLocalizedStringFromTableInBundle(token, @"MPBSignatureView", [self resourceBundle], @"");
+        if (![token isEqualToString:bundleSpecificLocalizationString])
+        {
+            return bundleSpecificLocalizationString;
+        }
+    }
+
+    //and as a fallback, we just return the token itself
+    NSLog(@"could not find any localization files. please check that you added the resource bundle and/or your own localizations");
+    return token;
 }
+
+
+- (UIImage *)imageWithName:(NSString *)name{
+
+    if (!name) {
+        return nil;
+    }
+
+    UIImage *img = [UIImage imageNamed:name inBundle:[self resourceBundle] compatibleWithTraitCollection:nil];
+
+    if (!img) {
+        NSLog(@"could not find the resource image. please check that you added the resource bundle.");
+    }
+
+    return img;
+}
+
 
 @end

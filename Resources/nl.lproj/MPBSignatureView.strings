@@ -1,5 +1,5 @@
 "MPBSignatureViewCancel" = "Afbreken";
-"MPBSignatureViewSignatureTextFormat" = "Hiermee machtig ik de betaling van %@ aan %@.";
+"MPBSignatureViewSignatureTextFormatWithMerchant" = "Hiermee machtig ik de betaling van %@ aan %@.";
 "MPBSignatureViewClear" = "Nieuwe handtekening";
 "MPBSignatureViewContinue" = "Verder";
-"MPBSignatureViewSignatureTextFormatWithoutMerchant" = "Hiermee machtig ik de betaling van %@.";
+"MPBSignatureViewSignatureTextFormat" = "Hiermee machtig ik de betaling van %@.";

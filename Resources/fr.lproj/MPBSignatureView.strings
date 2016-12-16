@@ -1,5 +1,5 @@
 "MPBSignatureViewCancel" = "Interrompre";
-"MPBSignatureViewSignatureTextFormat" = "J'autorise par la présente le paiement d'un montant de %@ à %@.";
+"MPBSignatureViewSignatureTextFormatWithMerchant" = "J'autorise par la présente le paiement d'un montant de %@ à %@.";
 "MPBSignatureViewClear" = "Nouvelle signature";
 "MPBSignatureViewContinue" = "Continuer";
-"MPBSignatureViewSignatureTextFormatWithoutMerchant" = "J'autorise par la présente le paiement d'un montant de %@.";
+"MPBSignatureViewSignatureTextFormat" = "J'autorise par la présente le paiement d'un montant de %@.";

@@ -23,12 +23,24 @@
  *
  */
 
-#ifndef MPBSignatureViewController_h
-#define MPBSignatureViewController_h
-
-#import "MPBCustomStyleSignatureViewController.h"
-#import "MPBDefaultStyleSignatureViewController.h"
+#import <UIKit/UIKit.h>
 #import "MPBSignatureViewControllerConfiguration.h"
-#import "MPBMposUIStyleSignatureViewController.h"
 
-#endif
+typedef void (^MPBSignatureViewControllerContinue)(UIImage * _Nonnull signature);
+typedef void (^MPBSignatureViewControllerCancel)();
+
+
+@interface MPBSignatureViewController : UIViewController
+
+@property (nonatomic, readonly, strong, nonnull) MPBSignatureViewControllerConfiguration *configuration;
+
+@property (nonatomic, copy, nullable) MPBSignatureViewControllerContinue continueBlock;
+@property (nonatomic, copy, nullable) MPBSignatureViewControllerCancel cancelBlock;
+
+
+- (nullable instancetype)initWithConfiguration:(nonnull MPBSignatureViewControllerConfiguration *)configuration;
+
+
+@end
+
+

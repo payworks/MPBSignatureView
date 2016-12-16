@@ -37,8 +37,8 @@
 
 @implementation MPBViewController
 
-- (id)init
-{
+- (id)init {
+
     self = [super init];
     if (self) {
         self.fieldShown = false;
@@ -46,73 +46,43 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-}
 
-- (IBAction)modal:(id)sender {
-    [self showModal:UIModalPresentationFormSheet style:[MPBDefaultStyleSignatureViewController alloc]];
-}
-
-- (IBAction)showPredefinedScreen:(id)sender {
-    [self showModal:UIModalPresentationFullScreen style:[MPBDefaultStyleSignatureViewController alloc]];
-}
-
-- (IBAction)showCustomScreen:(id)sender {
-    [self showCustomScreenWithIdentifier:@"signature"];
-}
-- (IBAction)showPayButtonStyleSignatureView:(id)sender {
-    [self showCustomScreenWithIdentifier:@"paybutton"];
-}
-
-- (void) showCustomScreenWithIdentifier:(NSString*) identifier {
-    MPBCustomStyleSignatureViewController *vc = (MPBCustomStyleSignatureViewController *)[self.storyboard instantiateViewControllerWithIdentifier:identifier];
-    MPBSignatureViewControllerConfiguration* config = [MPBSignatureViewControllerConfiguration configurationWithMerchantName:@"Antiques + Valuables GmbH" formattedAmount:@"421.99 €"];
-    config.scheme = MPBSignatureViewControllerConfigurationSchemeAmex;
-    vc.configuration = config;
-    vc.continueBlock = ^(UIImage *signature) {
-        [self showImage: signature];
-    };
-    vc.cancelBlock =^{};
-    
-    [self presentViewController:vc animated:YES completion:nil];
-}
-- (IBAction)mposui:(id)sender {
-        [self showModal:UIModalPresentationFullScreen style:[MPBMposUIStyleSignatureViewController alloc]];
-}
-
-- (void)showModal:(UIModalPresentationStyle) style style:(MPBCustomStyleSignatureViewController*) controller
-{
-    
-    MPBCustomStyleSignatureViewController* signatureViewController = [controller initWithConfiguration:[MPBSignatureViewControllerConfiguration configurationWithFormattedAmount:@"421.99 €"]];
-    signatureViewController.modalPresentationStyle = style;
-    signatureViewController.preferredContentSize = CGSizeMake(800, 500);
-    signatureViewController.configuration.scheme = MPBSignatureViewControllerConfigurationSchemeAmex;
-    
-    signatureViewController.continueBlock = ^(UIImage *signature) {
-        [self showImage: signature];
-    };
-    signatureViewController.cancelBlock = ^ {
-        
-    };
-    
-
-    
-    [self presentViewController:signatureViewController animated:YES completion:nil];
-}
-
-- (void) showImage: (UIImage*) signature {
-    self.signatureView.image = signature;
     self.signatureView.contentMode = UIViewContentModeScaleAspectFit;
-    
-    self.signatureView.layer.borderColor = [UIColor yellowColor].CGColor;
+    self.signatureView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.signatureView.layer.borderWidth = 2.0f;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
+
+- (IBAction)mposui:(id)sender {
+
+    MPBSignatureViewControllerConfiguration *configuration = [[MPBSignatureViewControllerConfiguration alloc] initWithFormattedAmount:@"421.99 €"];
+
+    static MPBSignatureViewControllerConfigurationScheme scheme = MPBSignatureViewControllerConfigurationSchemeGhLink;
+    configuration.scheme = scheme;
+
+    MPBSignatureViewController* signatureViewController = [[MPBSignatureViewController alloc] initWithConfiguration:configuration];
+
+    signatureViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+
+    signatureViewController.continueBlock = ^(UIImage *signature) {
+        [self showImage: signature];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+
+
+    signatureViewController.cancelBlock = ^ {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+
+    [self presentViewController:signatureViewController animated:YES completion:nil];
 }
+
+
+- (void) showImage: (UIImage*) signature {
+    self.signatureView.image = signature;
+}
+
 
 @end

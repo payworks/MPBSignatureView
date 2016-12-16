@@ -26,7 +26,8 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(int, MPBSignatureViewControllerConfigurationScheme) {
-    MPBSignatureViewControllerConfigurationSchemeVisa = 0,
+    MPBSignatureViewControllerConfigurationSchemeUnknown = 0,
+    MPBSignatureViewControllerConfigurationSchemeVisa,
     MPBSignatureViewControllerConfigurationSchemeVpay,
     MPBSignatureViewControllerConfigurationSchemeMastercard,
     MPBSignatureViewControllerConfigurationSchemeMaestro,
@@ -35,21 +36,21 @@ typedef NS_ENUM(int, MPBSignatureViewControllerConfigurationScheme) {
     MPBSignatureViewControllerConfigurationSchemeDiscover,
     MPBSignatureViewControllerConfigurationSchemeJCB,
     MPBSignatureViewControllerConfigurationSchemeUnionPay,
-    MPBSignatureViewControllerConfigurationSchemeNone
+    MPBSignatureViewControllerConfigurationSchemeGhLink
 };
 
 @interface MPBSignatureViewControllerConfiguration : NSObject
 
-@property (nonatomic, strong) NSString *merchantName;
-@property (nonatomic, strong) NSString *formattedAmount;
+@property (nonatomic, strong, nonnull) NSString *formattedAmount;
+@property (nonatomic, strong, nonnull) NSString *legalText;
+@property (nonatomic, strong, nonnull) NSString *clearButtonTitle;
+@property (nonatomic, strong, nonnull) NSString *cancelButtonTitle;
+@property (nonatomic, strong, nonnull) NSString *continueButtonTitle;
 
-@property (nonatomic, strong) UIImage *merchantImage;
 @property (nonatomic, assign) MPBSignatureViewControllerConfigurationScheme scheme;
+@property (nonatomic, strong, readonly, nullable) UIImage *imageForScheme;
 
-- (instancetype)initWithFormattedAmount:(NSString*) formattedAmount;
-- (instancetype)initWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount;
-+ (instancetype)configurationWithMerchantName:(NSString *)merchantName formattedAmount:(NSString *)formattedAmount;
-+ (instancetype) configurationWithFormattedAmount:(NSString*) formattedAmount;
 
+- (nullable instancetype)initWithFormattedAmount:(nonnull NSString *)formattedAmount;
 
 @end

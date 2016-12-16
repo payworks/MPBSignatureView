@@ -1,5 +1,5 @@
 "MPBSignatureViewCancel" = "Abbrechen";
-"MPBSignatureViewSignatureTextFormat" = "Hiermit autorisiere ich die Zahlung in Höhe von %@ an %@.";
+"MPBSignatureViewSignatureTextFormatWithMerchant" = "Hiermit autorisiere ich die Zahlung in Höhe von %@ an %@.";
 "MPBSignatureViewClear" = "Neue Unterschrift";
 "MPBSignatureViewContinue" = "Weiter";
-"MPBSignatureViewSignatureTextFormatWithoutMerchant" = "Hiermit autorisiere ich die Zahlung in Höhe von %@.";
+"MPBSignatureViewSignatureTextFormat" = "Hiermit autorisiere ich die Zahlung in Höhe von %@.";

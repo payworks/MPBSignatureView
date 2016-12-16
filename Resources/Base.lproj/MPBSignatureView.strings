@@ -1,4 +1,3 @@
-"MPBSignatureViewCancel" = "Cancel";
-"MPBSignatureViewSignatureTextFormat" = "I agree to pay the amount of %@ to %@.";
-"MPBSignatureViewClear" = "New signature";
+"MPBSignatureViewSignatureTextFormat" = "I agree to pay the amount of %@";
 "MPBSignatureViewContinue" = "Continue";
+"MPBSignatureViewCancel" = "Cancel";

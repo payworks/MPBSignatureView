@@ -93,7 +93,8 @@ NSString * const MPBSignatureViewBundleName = @"MPBSignatureViewResources";
     static NSBundle *MPSignatureViewBundle = nil;
     static dispatch_once_t MPSignatureViewBundleOnce;
     dispatch_once(&MPSignatureViewBundleOnce, ^{
-        NSString *mainBundleResourcePath = [[NSBundle mainBundle] resourcePath];
+
+        NSString *mainBundleResourcePath = [[NSBundle bundleForClass:[self class]] resourcePath];
         NSString *signatureViewBundlePath = [mainBundleResourcePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.bundle", MPBSignatureViewBundleName]];
         MPSignatureViewBundle = [NSBundle bundleWithPath:signatureViewBundlePath];
         NSLog(@"bundle path: %@", signatureViewBundlePath);
